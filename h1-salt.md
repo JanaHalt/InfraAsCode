@@ -1,5 +1,8 @@
 # h1 - Hei maailma!
 ============================
+
+Tätä harjoitusta tehdessä toimin omalla pöytäkoneellani, jolla on asennettu Windows 10, tietääkseni kaikkine viimeisimpine päivityksineen. 
+
 ### Lue ja tiivistä:
 - .....
 - ....
