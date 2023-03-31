@@ -18,7 +18,7 @@ Asennuksen jälkeen piti vielä uudelleenkäynnistää kone, mutta sitten pääs
 #### Asenna Vagrant filessa konfiguroitu kolmen koneen verkko
 Avasin Windows Powershellin järjestelmävalvojana ja loin kansion <i>saltdemo</i> komennolla <i>mkdir</i> ja siihen tiedoston <i>Vagrantfile</i>. 
 
-Jatkoin komennolla <i>vagrant up</i> - kolme Vagrantfile:ssä konfiguroidut koneet käynnistyvät parissa minuutissa.
+Jatkoin komennolla <i>vagrant up</i> - kolme Vagrantfile:ssä konfiguroitua konetta käynnistyivät parissa minuutissa.
 
 #### Hyväksy orjat
 Kirjauduin master-koneelle ssh:lla käyttäen komentoa <i>vagrant ssh tmaster</i> ja hyväksyin orja-koneiden avaimet komennolla <i>sudo salt-key -A</i>.
