@@ -32,6 +32,7 @@ Kirjauduin master-koneelle ssh:lla käyttäen komentoa <i>vagrant ssh tmaster</i
 #### Näytä esimerkit tiloista...:
 - <i>package</i>:
 Asensin <i>tree</i>n orja-koneille komennolla <i>sudo salt '*' state.single pkg.installed tree</i>
+
 ![treeinstalled](https://user-images.githubusercontent.com/78509164/229240063-b0b975aa-9c66-4b50-8f4b-c3f8763ee935.png)
 
 Orjalla t002 oli sama lopputulos.
@@ -46,6 +47,6 @@ Orjalla t002 oli sama lopputulos.
 
 
 
-## Lähteet
+###### TO DO:
 
 e) Tee infraa koodina, esim oma hei maailma.
