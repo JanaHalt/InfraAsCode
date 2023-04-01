@@ -1,12 +1,25 @@
 # h1 - Hei maailma!
-============================
+******************************
 
 Tätä harjoitusta tehdessä toimin omalla pöytäkoneellani, jolla on asennettu Windows 10, tietääkseni kaikkine viimeisimpine päivityksineen. 
 
 ### Lue ja tiivistä:
-- .....
-- ....
-- ....
+Karvinen 2023: Create a Web Page Using Github https://terokarvinen.com/2023/create-a-web-page-using-github/ 
+Nettisivujen luominen Githubilla on todella helppoa ja nopeaa.
+  - Rekisteröidy ja luo uusi <i>repository</i>
+  - Lisää .md tiedosto -  tästä tulee uusi nettisivu.
+  - Lisää tekstiä äsken luotuun tiedostoon ja paina <i>commit</i>.
+  Valmista!
+  
+Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves https://terokarvinen.com/2023/salt-vagrant/
+Tiivis tietopaketti siitä, miten Vagrant ohjelmistolla ja Saltilla (configuration management system) luodaan ja hallitaan tietokoneita. Tässä kyseisessä harjoituksessa yksi master-tietokone ja kaksi orja-tietokonetta. 
+  - Konfigurointitiedot tietokoneista, jotka halutaan luoda ovat Vagrantfile:ssa.
+  - Orjien avaimet hyväksytään komennolla <i>sudo salt-key -A</i>, jossa -A tarkoittaa kaikki.
+  - Voidaan käyttää tavallisia komentorivin komentoja.
+  - Orjilta voidaan pyytää tietoja, esimerkiksi mikä on niiden IP-osoite tai käyttöjärjestelmä.
+  - state.single komennoilla kuvataan haluttu lopputila, muutoksia tehdään vain jos tarvitaan.
+  - Voidaan luoda erilaisia tiloja, kuten ko. artikkelissa "hello" ja niitä voidaan ajaa tietyille tai kaikille orjille.
+  - Top.sls tiedosto määrää, mitkä tilat ajetaan mille orjille.
 
 ### Asenna Debian 11 Vagrantilla
 Alkuun piti asentaa Vagrant koneelle. Käytän kotipöytäkoneellani Windows 10. Joten ensin latasin Vagrant Windows AMD64 binary täältä: https://developer.hashicorp.com/vagrant/downloads .
@@ -75,7 +88,7 @@ Ekana loin käyttäjän <i>tester01</i> komennolla <i>sudo salt '*' state.single
 
 ![cmdrun](https://user-images.githubusercontent.com/78509164/229240818-542aab2e-a65d-4458-9f2d-e24668bf7bc4.png)
 
-###Infraa koodina
+### Infraa koodina
 Tässä kohdassa loin hakemiston, johon sitten voin kirjoittaa "state-tiedostoja". Käytin komentoa <i>sudo mkdir -p /srv/salt/greeting</i> ja menin muokkaamaan (samala loin sen) tiedostoa <i>init.sls</i> komennolla <i>sudoedit /srv/salt/greeting/init.sls</i>.
 Ajoin tilan "greeting" komennolla <i>sudo salt '*' state.apply greeting</i>, jolloin tulos oli seuraavanlainen (sama orja-koneella t002):
 
@@ -87,6 +100,6 @@ Tässä vielä <i>/srv/salt/greeting/init.sls</i> ja <i>greetingall.txt</i> tied
 
 ![greetingallsisältö](https://user-images.githubusercontent.com/78509164/229315252-f3617080-7047-497a-9234-cd593b5dc48f.png)
 
-Lopuksi vielä loin tiedoston, johon oli tarkoitus kirjoittaa konfiguraatiot mitkä tilat ajelaan mille orja-koneelle. 
+Lopuksi vielä loin tiedoston, johon oli tarkoitus kirjoittaa konfiguraatiot mitkä tilat ajelaan mille orja-koneelle. Tähti '*' tarkoittaa, että kaikille orja-koneille.
 
 ![topsls](https://user-images.githubusercontent.com/78509164/229315366-05f10271-b2de-4e6e-ace7-de38437f587c.png)
