@@ -55,9 +55,11 @@ Tiedoston luominen kaikilla orja-koneilla komennolla <i>sudo salt '*' state.sing
 ![filestate](https://user-images.githubusercontent.com/78509164/229277661-d19730b9-9392-4ade-a9c2-d02cd07edfe4.png)
 
 - <i>service</i>:
-Tässä sitten varmistin, että daemon pyörii molemmilla orja-koneilla käyttäen komentoa <i>sudo salt '*' state.single service.running apache2</i>.
+Tässä sitten varmistin, että daemon pyörii molemmilla orja-koneilla käyttäen komentoa <i>sudo salt '*' state.single service.running apache2</i> ja lisäksi <i>curl -s 192.168.12.102|grep title</i>, jotta varmistuin, että kaikki oli kunnossa.
   
 ![servicerunning1](https://user-images.githubusercontent.com/78509164/229312487-cf8f24c1-1ebd-41f7-be61-1a401ba82b8a.png)
+
+![image](https://user-images.githubusercontent.com/78509164/229313120-02abcfc5-863e-4384-87ca-9461b59d39ff.png)
 
 
 - <i>user</i>:
