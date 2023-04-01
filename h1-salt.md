@@ -8,19 +8,19 @@ Tätä harjoitusta tehdessä toimin omalla pöytäkoneellani, jolla on asennettu
 - ....
 - ....
 
-#### Asenna Debian 11 Vagrantilla
+### Asenna Debian 11 Vagrantilla
 Alkuun piti asentaa Vagrant koneelle. Käytän kotipöytäkoneellani Windows 10. Joten ensin latasin Vagrant Windows AMD64 binary täältä: https://developer.hashicorp.com/vagrant/downloads .
 
 ![image](https://user-images.githubusercontent.com/78509164/229228996-33fff4ef-3a2b-4847-8665-30fcd71c8d37.png)
 
 Asennuksen jälkeen piti vielä uudelleenkäynnistää kone, mutta sitten pääsin jatkamaan.
 
-#### Asenna Vagrant filessa konfiguroitu kolmen koneen verkko
+### Asenna Vagrant filessa konfiguroitu kolmen koneen verkko
 Avasin Windows Powershellin järjestelmävalvojana ja loin kansion <i>saltdemo</i> komennolla <i>mkdir</i> ja siihen tiedoston <i>Vagrantfile</i>. 
 
 Jatkoin komennolla <i>vagrant up</i> - kolme Vagrantfile:ssä konfiguroitua konetta käynnistyivät parissa minuutissa.
 
-#### Hyväksy orjat
+### Hyväksy orjat
 Kirjauduin master-koneelle ssh:lla käyttäen komentoa <i>vagrant ssh tmaster</i> ja hyväksyin orja-koneiden avaimet komennolla <i>sudo salt-key -A</i>.
 
 ![acceptingkeys](https://user-images.githubusercontent.com/78509164/229236213-746a1a49-50c1-4575-bb44-f96950cc8da0.png)
@@ -29,21 +29,40 @@ Kirjauduin master-koneelle ssh:lla käyttäen komentoa <i>vagrant ssh tmaster</i
 
 ![testingconnection](https://user-images.githubusercontent.com/78509164/229236893-805994df-e3ed-4e29-9895-e263f50724aa.png)
 
-#### Näytä esimerkit tiloista...:
+### Näytä esimerkit tiloista...:
 Tässä osuudessa seurasin https://terokarvinen.com/2023/salt-vagrant/ esimerkkiä hyvin tarkasti.
 - <i>package</i>:
 Yritin asentaa orja-koneille Nginx:n komennolla <i>sudo salt '*' state.single pkg.installed nginx</i>. Sain kuitenkin virheilmoituksen:
 ![nginxnot](https://user-images.githubusercontent.com/78509164/229277976-489d7744-c79c-4082-b059-04aaa20a48e7.png)
 
-Orjalla t001 oli sama lopputulos. Yrittäessäni samaa, mutta apache2:lla sain vastaavan tuloksen. Jatkan vielä selvittelyjä... :) 
+Orjalla t001 oli sama lopputulos. Yrittäessäni samaa, mutta apache2:lla sain vastaavan tuloksen. Googlettelun jälkeen selvisi, että Vagrantin sisällä toimivilla virtuaalikoneilla oli väärä aika/päivämäärä. Ratkaisu löytyi täältä https://ahelpme.com/linux/ubuntu/ubuntu-apt-inrelease-is-not-valid-yet-invalid-for-another-151d-18h-5min-59s/ ja täältä https://github.com/MichaIng/DietPi/issues/5478#issuecomment-1119741371 .
+
+![timesync1](https://user-images.githubusercontent.com/78509164/229310863-22a8c697-621c-4e6b-a38f-1e59a9598878.png)
+
+![timesync2](https://user-images.githubusercontent.com/78509164/229310888-16e4c17c-2518-428e-98d7-d9d4632f0996.png)
+
+![syst_timesync](https://user-images.githubusercontent.com/78509164/229310899-b21f2a59-8a5e-4367-8861-4bd2e8c58e2b.png)
+
+![timesync3](https://user-images.githubusercontent.com/78509164/229310905-d141ffb0-6a19-478f-89ad-7345a4300f96.png)
+
+Aikani ihmettelin, miksi en edelleenkään pystynyt asentamaan orja-koneille esimerkiksi apache2:ta. Sitten tajusin, etten ajanut yllä (kuvissa) mainittu mainittuja komentoja niille. Eli jatkoin harjoitusta sillä, että ajoin nuo samat komennot, paitsi kaavalla <i>sudo salt '*'....</i>. Tämän kaiken jälkeen Apache2:n asennus orja-koneille onnistui!
+
+![apacheinstalled3](https://user-images.githubusercontent.com/78509164/229312106-f7bad087-2f79-4ea4-845c-68fc2487711a.png)
+
 
 - <i>file</i>:
 Tiedoston luominen kaikilla orja-koneilla komennolla <i>sudo salt '*' state.single file.managed '/tmp/welcome-to-janahalt.pro'</i>.
 ![filestate](https://user-images.githubusercontent.com/78509164/229277661-d19730b9-9392-4ade-a9c2-d02cd07edfe4.png)
 
-- service
+- <i>service</i>:
+Tässä sitten varmistin, että daemon pyörii molemmilla orja-koneilla käyttäen komentoa <i>sudo salt '*' state.single service.running apache2</i>.
+  
+![servicerunning1](https://user-images.githubusercontent.com/78509164/229312487-cf8f24c1-1ebd-41f7-be61-1a401ba82b8a.png)
+
+
 - <i>user</i>:
 Ekana loin käyttäjän <i>tester01</i> komennolla <i>sudo salt '*' state.single user.present tester01</i>, sitten konfiguroin ko. käyttäjätiliä kaikilla orja-koneilla siten, että heidän oletus komentorivitulkki on bash komennolla <i>sudo salt '*' state.single user.present tester01 shell="/bin/bash/"</i>. Lopuksi vielä poistin käyttäjätilin <i>tester01</i> kaikilta orja-koneilta komennolla <i>sudo salt '*' state.signel user.absent tester01</i>. Alla kuvakaappaukset ko. asioista :)
+
 ![adduser](https://user-images.githubusercontent.com/78509164/229278535-c45f103a-ddba-4744-aecc-8f38b4b0f71d.png)
 
 ![modifyuser](https://user-images.githubusercontent.com/78509164/229278542-02666477-3900-4c4d-92f2-eeae4a6b3987.png)
@@ -57,6 +76,6 @@ Ekana loin käyttäjän <i>tester01</i> komennolla <i>sudo salt '*' state.single
 
 
 
-###### TO DO:
+##### TO DO:
 
 e) Tee infraa koodina, esim oma hei maailma.
