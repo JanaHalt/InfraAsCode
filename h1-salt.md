@@ -1,17 +1,19 @@
 # h1 - Hei maailma!
 ******************************
 
-Tätä harjoitusta tehdessä toimin omalla pöytäkoneellani, jolla on asennettu Windows 10, tietääkseni kaikkine viimeisimpine päivityksineen. 
+Tätä harjoitusta tehdessä toimin omalla pöytäkoneellani, jolla on asennettu Windows 10, tietääkseni kaikkine viimeisimpine päivityksineen. Toteutin harjoituksen 31.3.-1.4. aikana.
 
 ### Lue ja tiivistä:
-Karvinen 2023: Create a Web Page Using Github https://terokarvinen.com/2023/create-a-web-page-using-github/ 
+Karvinen 2023: Create a Web Page Using Github <i>https://terokarvinen.com/2023/create-a-web-page-using-github/</i>
+
 Nettisivujen luominen Githubilla on todella helppoa ja nopeaa.
   - Rekisteröidy ja luo uusi <i>repository</i>
   - Lisää .md tiedosto -  tästä tulee uusi nettisivu.
   - Lisää tekstiä äsken luotuun tiedostoon ja paina <i>commit</i>.
   Valmista!
   
-Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves https://terokarvinen.com/2023/salt-vagrant/
+Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves <i>https://terokarvinen.com/2023/salt-vagrant/</i>
+
 Tiivis tietopaketti siitä, miten Vagrant ohjelmistolla ja Saltilla (configuration management system) luodaan ja hallitaan tietokoneita. Tässä kyseisessä harjoituksessa yksi master-tietokone ja kaksi orja-tietokonetta. 
   - Konfigurointitiedot tietokoneista, jotka halutaan luoda ovat Vagrantfile:ssa.
   - Orjien avaimet hyväksytään komennolla <i>sudo salt-key -A</i>, jossa -A tarkoittaa kaikki.
@@ -103,3 +105,21 @@ Tässä vielä <i>/srv/salt/greeting/init.sls</i> ja <i>greetingall.txt</i> tied
 Lopuksi vielä loin tiedoston, johon oli tarkoitus kirjoittaa konfiguraatiot mitkä tilat ajelaan mille orja-koneelle. Tähti '*' tarkoittaa, että kaikille orja-koneille.
 
 ![topsls](https://user-images.githubusercontent.com/78509164/229315366-05f10271-b2de-4e6e-ace7-de38437f587c.png)
+
+-----------------------------
+#### Lähteet
+
+https://terokarvinen.com/2023/salt-vagrant/
+
+https://tuomasvalkamo.com/CMS-course/week-1/
+
+https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/
+
+https://terokarvinen.com/2023/create-a-web-page-using-github/
+
+https://developer.hashicorp.com/vagrant/downloads
+
+https://ahelpme.com/linux/ubuntu/ubuntu-apt-inrelease-is-not-valid-yet-invalid-for-another-151d-18h-5min-59s/
+
+https://github.com/MichaIng/DietPi/issues/5478#issuecomment-1119741371
+
