@@ -44,7 +44,7 @@ Kirjauduin master-koneelle ssh:lla käyttäen komentoa <i>vagrant ssh tmaster</i
 
 ![testingconnection](https://user-images.githubusercontent.com/78509164/229236893-805994df-e3ed-4e29-9895-e263f50724aa.png)
 
-### Näytä esimerkit tiloista...:
+### Näytä esimerkit tiloista package, file, service, user, cmd.run:
 Tässä osuudessa seurasin https://terokarvinen.com/2023/salt-vagrant/ esimerkkiä hyvin tarkasti.
 - <i>package</i>:
 Yritin asentaa orja-koneille Nginx:n komennolla <i>sudo salt '*' state.single pkg.installed nginx</i>. Sain kuitenkin virheilmoituksen:
