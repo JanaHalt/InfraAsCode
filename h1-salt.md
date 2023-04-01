@@ -75,9 +75,18 @@ Ekana loin käyttäjän <i>tester01</i> komennolla <i>sudo salt '*' state.single
 
 ![cmdrun](https://user-images.githubusercontent.com/78509164/229240818-542aab2e-a65d-4458-9f2d-e24668bf7bc4.png)
 
+###Infraa koodina
+Tässä kohdassa loin hakemiston, johon sitten voin kirjoittaa "state-tiedostoja". Käytin komentoa <i>sudo mkdir -p /srv/salt/greeting</i> ja menin muokkaamaan (samala loin sen) tiedostoa <i>init.sls</i> komennolla <i>sudoedit /srv/salt/greeting/init.sls</i>.
+Ajoin tilan "greeting" komennolla <i>sudo salt '*' state.apply greeting</i>, jolloin tulos oli seuraavanlainen (sama orja-koneella t002):
 
+![stateapplied](https://user-images.githubusercontent.com/78509164/229314645-93dc4c05-28b9-45a3-9e04-d6a2fbb23dd2.png)
 
+Tässä vielä <i>/srv/salt/greeting/init.sls</i> ja <i>greetingall.txt</i> tiedostojen sisällöt:
 
-##### TO DO:
+![greetingsisältö](https://user-images.githubusercontent.com/78509164/229315234-5056dd81-07ec-4bfd-8e53-da13ed42877d.png)
 
-e) Tee infraa koodina, esim oma hei maailma.
+![greetingallsisältö](https://user-images.githubusercontent.com/78509164/229315252-f3617080-7047-497a-9234-cd593b5dc48f.png)
+
+Lopuksi vielä loin tiedoston, johon oli tarkoitus kirjoittaa konfiguraatiot mitkä tilat ajelaan mille orja-koneelle. 
+
+![topsls](https://user-images.githubusercontent.com/78509164/229315366-05f10271-b2de-4e6e-ace7-de38437f587c.png)
