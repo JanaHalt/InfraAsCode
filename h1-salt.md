@@ -61,7 +61,7 @@ Orjalla t001 oli sama lopputulos. Yrittäessäni samaa, mutta apache2:lla sain v
 
 ![timesync3](https://user-images.githubusercontent.com/78509164/229310905-d141ffb0-6a19-478f-89ad-7345a4300f96.png)
 
-Aikani ihmettelin, miksi en edelleenkään pystynyt asentamaan orja-koneille esimerkiksi apache2:ta. Sitten tajusin, etten ajanut yllä (kuvissa) mainittu mainittuja komentoja niille. Eli jatkoin harjoitusta sillä, että ajoin nuo samat komennot, paitsi kaavalla <i>sudo salt '*'....</i>. Tämän kaiken jälkeen Apache2:n asennus orja-koneille onnistui!
+Aikani ihmettelin, miksi en edelleenkään pystynyt asentamaan orja-koneille esimerkiksi apache2:ta. Sitten tajusin, etten ajanut yllä (kuvissa) mainittuja komentoja niille. Eli jatkoin harjoitusta sillä, että ajoin nuo samat komennot, paitsi kaavalla <i>sudo salt '*'....</i>. Tämän kaiken jälkeen Apache2:n asennus orja-koneille onnistui!
 
 ![apacheinstalled3](https://user-images.githubusercontent.com/78509164/229312106-f7bad087-2f79-4ea4-845c-68fc2487711a.png)
 
