@@ -14,7 +14,7 @@ Nettisivujen luominen Githubilla on todella helppoa ja nopeaa.
   
 Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves <i>https://terokarvinen.com/2023/salt-vagrant/</i>
 
-Tiivis tietopaketti siitä, miten Vagrant ohjelmistolla ja Saltilla (configuration management system) luodaan ja hallitaan tietokoneita. Tässä kyseisessä harjoituksessa yksi master-tietokone ja kaksi orja-tietokonetta. 
+Tiivis tietopaketti siitä, miten Vagrant ohjelmistolla ja Saltilla (configuration management system) luodaan ja hallitaan virtuaalitietokoneita. Tässä kyseisessä harjoituksessa yksi master-tietokone ja kaksi orja-tietokonetta. 
   - Konfigurointitiedot tietokoneista, jotka halutaan luoda ovat Vagrantfile:ssa.
   - Orjien avaimet hyväksytään komennolla <i>sudo salt-key -A</i>, jossa -A tarkoittaa kaikki.
   - Voidaan käyttää tavallisia komentorivin komentoja.
