@@ -18,6 +18,8 @@ Alkuun pystytin salt master-slave arkkitehtuurin hyödyntämällä ohjetta Salt 
   -> hostname -I  
   ![master_hostnameIP](https://user-images.githubusercontent.com/78509164/230739046-49d1bda1-15d4-4a68-a2e4-4f610626f812.png)
 
-2) 
+2) Asenna slave:  
+  -> sudo apt-get update  
+  -> sudo apt-get -y install salt-minion
 
 xxx
