@@ -9,7 +9,7 @@ Viikko 2 Palvelinten hallinta-kurssia. Aiheena Demonit.
 ....
 
 Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04, lisäksi ssh-yhteystesteissä otan tarvittaessa yhteyttä virtuaalikoneelle, jossa on asennettuna Fedora 37 Workstation.  
-Toteutin harjoituksen 9.4.2023.
+Toteutin harjoituksen 9.4.2023 alkaen klo 10:45.
 
 ## OpenSSH palvelimen asennus käsin
 
@@ -29,7 +29,7 @@ Sain yhteyden ja sitten poistuin.
 ![image](https://user-images.githubusercontent.com/78509164/230762717-7ed27d42-ad38-4128-bf97-1e209d4f2a9b.png)
 
 
-
+Nyt on klo 11:45. Lounas ja lapset kutsuvat, joten joudun jatkamaan myöhemmin. :)
  
 
   
