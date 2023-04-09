@@ -8,68 +8,25 @@ Viikko 2 Palvelinten hallinta-kurssia. Aiheena Demonit.
 -
 ....
 
-## Alkuvalmistelut
-
-Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04. Toteutusajankohta 8.4.2023 klo 22:10 alkaen.
-
-![alkusetti](https://user-images.githubusercontent.com/78509164/230739335-8d4dd76a-bdce-41f2-a676-5076c604c9c1.png)
-
-Alussa minulla oli vain tuo eka Ubuntu Desktop, mutta kloonasin siitä kaksi konetta lisää ja muokkasin niiden nimet. Lisäksi koneelle Slave 1 lisäsin harjoituksen vuoksi käyttäjän "eka" ja koneelle Slave 2 käyttäjän "toka".
-
-Alkuun pystytin salt master-slave arkkitehtuurin hyödyntämällä ohjetta Salt Quickstart - Salt Stack Master and Slave on Ubuntu Linux (https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/):
-
-### Asenna master:
-  -> sudo apt-get update  
-  -> sudo apt-get -y install salt-master  
-  -> hostname -I  
-  ![master_hostnameIP](https://user-images.githubusercontent.com/78509164/230739046-49d1bda1-15d4-4a68-a2e4-4f610626f812.png)
-
-### Asenna slave. Näin siis menettelin molemmilla slave-koneilla:  
-  -> sudo apt-get update  
-  -> sudo apt-get -y install salt-minion
-  -> Tiedostoon /etc/salt/minion kirjoitin master-koneen sijainnin ja kunkin slave-koneen id:n.  
-     (sudoedit /etc/salt/minion)
-     
-![slave1](https://user-images.githubusercontent.com/78509164/230740274-bfa78072-419f-40b3-b898-7b350c8cd0a9.png)
-
-
-![slave2](https://user-images.githubusercontent.com/78509164/230740261-e18eda62-70cd-45f9-9bec-e6ef581f63d5.png)
-
-     
-  -> Lopuksi uudelleenkäynnistin salt-demonit molemmilla slave-koneilla, jotta uudet muutokset tulisivat voimaan. Käytetty komento: sudo systemctl restart salt-minion.service
-  
-### Hyväksy orjien avaimet master-koneella  
-Sain virheilmoituksen "The key glob '*' does not match any unaccepted keys. Löysin ohjeen uudelleenkäynnistää salt-master demoni komennolla sudo systemctl restart salt-master.service.  
-
-Edellisestä huolimatta avaimia ei edelleenkään kuulunut. Tarkistin kaikkien koneiden IP-osoitteet ja kaikilla oli sama 10.0.2.15. Tässä kohtaa tajusin mennä tarkistamaan virtuaalikoneiden verkkoasetuksia virtualboxin puolella. Sekä master- että orja-koneilla oli verkkoasetuksissa kohdassa "attached to" NAT. Muutin sen "Bridged Adapter":ksi. Sitten toki piti käydä laittamassa masterin uusi IP osoite kansioon /etc/salt/minion molemmilla slave-koneilla. Tämän jälkeen toki piti jälleen uudelleenkäynnistää salt-demonit slave-koneilla ja sitten asiat alkoi rullaa!
-
-![networksettings](https://user-images.githubusercontent.com/78509164/230741398-36e8637c-ee3a-4908-91f0-9fa448d54153.png)
-
-![uusi_masterIP](https://user-images.githubusercontent.com/78509164/230741746-9dc58da4-45c8-4317-bd5e-2a1a49f0fef1.png)
-
-![image](https://user-images.githubusercontent.com/78509164/230741891-430d042b-33a9-4e34-9f70-2a2c8bfc1b01.png)
-
-
-Tähän kaikkeen edellämainittuun meni reilu tunti. Nyt väsymys alkaa voittaa, joten jatkan huomenna :)
-
-##### 9.4.23 ~klo 9:10 jatkan.
-
-Eilen jäin siihen, että hyväksyin slave-koneiden avaimet. Nyt testaan master-slave toimivuutta antamalla master-koneen komentorivilla slave-koneille käskyt  
-**sudo salt '*' cmd.run 'whoami'**  
-ja  
-**sudo salt '*' cmd.run 'hostname -I'**  
-Alla kuvakaappaus tuloksista. Tulos kertoo meille, että master-koneen käskyt menevät perille slave-koneille ja slave-koneet toteuttavat ne asianmukaisesti.
-
-![masterSlave](https://user-images.githubusercontent.com/78509164/230757570-359062fb-3049-46fa-b04b-58ae2f31371a.png)
+Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04, lisäksi ssh-yhteystesteissä otan tarvittaessa yhteyttä virtuaalikoneelle, jossa on asennettuna Fedora 37 Workstation.  
+Toteutin harjoituksen 9.4.2023.
 
 ## OpenSSH palvelimen asennus käsin
 
-OpenSSH palvelimen asennus on yksinkertaista. Komentorivillä annetaan seuraavat komennot:  
-**sudo apt-get install openssh-server**  Tämä asentaa OpenSSHn.  
+OpenSSH palvelimen asennus on yksinkertaista.  
 
-**sudo systemctl enable ssh** Tämä enabloi SSHn.  
+**sudo apt-get install openssh-server**  Asennetaan OpenSSHn ja otetaan se käyttöön **sudo systemctl enable ssh**.  
 
-**sudo systemctl start ssh** Tämä käynnistää SSHn.
+**sudo systemctl start sshd** komennolla käynnistetään 
+
+**sudo systemctl status sshd** Tarkistetaan, SSHn statuksen.  
+
+Katsotaan, onko portti 22 auki. Address:Port:n kohdalla näkyy 0.0.0.0:ssh, joten portti 22 on oletettavasti auki. Kokeillaan vielä ssh toimii.
+![portitAuki](https://user-images.githubusercontent.com/78509164/230759535-8b1d556c-feb3-4854-820e-f917dfdc44d0.png)  
+
+Sain yhteyden ja sitten poistuin.
+
+![image](https://user-images.githubusercontent.com/78509164/230762717-7ed27d42-ad38-4128-bf97-1e209d4f2a9b.png)
 
 
 
@@ -77,6 +34,5 @@ OpenSSH palvelimen asennus on yksinkertaista. Komentorivillä annetaan seuraavat
 
   
 ##### Lähteet
-https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/ 
 
 xxx
