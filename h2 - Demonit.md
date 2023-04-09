@@ -47,12 +47,9 @@ Sitten vielä muokkasin **sshd_config** tiedostoa, jotta ssh-palvelin kuuntelee 
 Luodaan hakemisto komennolla **sudo mkdir /srv/salt/ssh** ja siihen tiedosto **sshd.sls** komennolla **sudoedit /srv/salt/ssh/sshd.sls**. sshd.sls tiedostoon seuraavat:  
 ![sshdsls](https://user-images.githubusercontent.com/78509164/230793468-7f6f81ee-e753-4dd6-aac7-5999d7d6cc89.png)
 
-
 Testasin toimivuutta komennolla **sudo salt-call --local state.apply ssh**, tuloksena:  
 ![openssh1](https://user-images.githubusercontent.com/78509164/230781795-48e96421-b9f9-4215-8233-1f117dfdda56.png)  
 Kuvassa tosin komento **sudo salt '*' cmd.run 'hostname -I'**, mutta virhe oli samanlainen tuon edellisenkin komennon kanssa.  
-
-
 
 Jatkoin state-tiedoston parissa kirjoittamalla sinne seuraavat:  
 ![sshdstate1](https://user-images.githubusercontent.com/78509164/230793777-9854bfea-689f-4b7e-a2d8-060c3f56e021.png)
@@ -60,10 +57,30 @@ Jatkoin state-tiedoston parissa kirjoittamalla sinne seuraavat:
 State-tiedostossa esiintyvät tiedostopolut viittavat alla näytettyyn tiedostoon **sshd_config**. Siinä tiedostossa minulla oli jo ennestään portit 22 ja 2244 määritetty olemaan auki.  
 
 Nyt testaan staten toimivuutta suorittamalla sitä saltin kautta slave-koneille komennolla **sudo salt '*' state.apply sshd**.  
-Tömä ei kuitenkaan toiminut, vaan sain tällaisen virheen  
+Tämä ei kuitenkaan toiminut, vaan sain tällaisen virheen:  
+
 ![saltvirhe](https://user-images.githubusercontent.com/78509164/230794379-a19a6eaf-322d-4aee-82d9-f65605f8077b.png)  
+
 Kuvassa tosin komento **sudo salt '*' cmd.run 'hostname -I'**, mutta virhe oli samanlainen tuon edellisenkin komennon kanssa.  
 
+Googlailtuani hetken löysin tiedon, että ongelma voisi olla master-koneeni ufw palomuurin määrityksissä. Saltia varten siinä pitäisi olla portit 4505 ja 4506 auki. Joten seuraavaksi lähdin testaamaan, ratkaiseeko em. porttien lisääminen aukioleviin ufw:ssa ongelmani:  
+
+
+![saltportit](https://user-images.githubusercontent.com/78509164/230794556-1398db57-6470-493d-a69a-2560ea22c8d9.png)  
+
+Seuraavaksi ssh:n uudelleenkäynnistys komennolla **sudo systemctl restart sshd** ja sitten testaan uudelleen, saako master-kone yhteyden slave-koneille ja toimiiko aiemmin luomani state.  
+
+![image](https://user-images.githubusercontent.com/78509164/230795459-6a938a63-0c0f-4083-9c7d-1e67cad228cc.png)  
+
+![stateeitoimi](https://user-images.githubusercontent.com/78509164/230795292-984ffded-d81a-4083-a88d-21348c3dfb07.png)  
+
+Siitä viimeisimmästä virheilmoituksesta tajusin, että olin epähuomiossani unohtanut luoda **top.sls** tiedoston hakemistoon **/srv/salt/**, joten heti korjasin tuon:  
+
+![topsls](https://user-images.githubusercontent.com/78509164/230796586-08600b37-358c-4de5-b258-4e3e2796183f.png)  
+
+Tuon jälkeen sain uuden virheilmoituksen. Jippii.  
+
+![saltvirhe2](https://user-images.githubusercontent.com/78509164/230796648-2916e5d9-8240-411a-b813-e463f0017a44.png)  
 
 
 
