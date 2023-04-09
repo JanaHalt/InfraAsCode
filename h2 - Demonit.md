@@ -8,7 +8,7 @@ Viikko 2 Palvelinten hallinta-kurssia. Aiheena Demonit.
 -
 ....
 
-## Asenna OpenSSH-palvelin käsin. Laita se kuuntelemaan oletusportin lisäksi jotain toista porttia. Testaa lopputulos!
+## Alkuvalmistelut
 
 Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04. Toteutusajankohta 8.4.2023 klo 22:10 alkaen.
 
@@ -52,10 +52,29 @@ Edellisestä huolimatta avaimia ei edelleenkään kuulunut. Tarkistin kaikkien k
 
 Tähän kaikkeen edellämainittuun meni reilu tunti. Nyt väsymys alkaa voittaa, joten jatkan huomenna :)
 
+##### 9.4.23 ~klo 9:10 jatkan.
+
+Eilen jäin siihen, että hyväksyin slave-koneiden avaimet. Nyt testaan master-slave toimivuutta antamalla master-koneen komentorivilla slave-koneille käskyt  
+**sudo salt '*' cmd.run 'whoami'**  
+ja  
+**sudo salt '*' cmd.run 'hostname -I'**  
+Alla kuvakaappaus tuloksista. Tulos kertoo meille, että master-koneen käskyt menevät perille slave-koneille ja slave-koneet toteuttavat ne asianmukaisesti.
+
+![masterSlave](https://user-images.githubusercontent.com/78509164/230757570-359062fb-3049-46fa-b04b-58ae2f31371a.png)
+
+## OpenSSH palvelimen asennus käsin
+
+OpenSSH palvelimen asennus on yksinkertaista. Komentorivillä annetaan seuraavat komennot:  
+**sudo apt-get install openssh-server**  Tämä asentaa OpenSSHn.
+**sudo systemctl enable ssh** Tämä enabloi SSHn.  
+**sudo systemctl start ssh** Tämä käynnistää SSHn.
+
+
 
  
 
   
-  
+##### Lähteet
+https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/ 
 
 xxx
