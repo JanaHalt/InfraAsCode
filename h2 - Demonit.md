@@ -42,6 +42,14 @@ Sitten vielä muokkasin **sshd_config** tiedostoa, jotta ssh-palvelin kuuntelee 
  
  ![ssh2244](https://user-images.githubusercontent.com/78509164/230765761-d8b171e0-0f10-42fd-991c-ee011acc8944.png)  
  
+## Nyt sitten automatisointi  
+
+Luodaan hakemisto komennolla **sudo mkdir /srv/salt/ssh** ja siihen tiedosto **init.sls** komennolla **sudoedit /srv/salt/ssh/init.sls**. Init.sls tiedostoon seuraavat:  
+![initsls](https://user-images.githubusercontent.com/78509164/230780908-ee1326e3-6e57-4717-b07a-75bafa19df31.png)
+
+Testasin toimivuutta komennolla **sudo salt-call --local state.apply ssh**, tuloksena:  
+![openssh1](https://user-images.githubusercontent.com/78509164/230781795-48e96421-b9f9-4215-8233-1f117dfdda56.png)
+
 
 
 
