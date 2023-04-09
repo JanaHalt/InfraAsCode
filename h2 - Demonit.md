@@ -29,7 +29,7 @@ Sain yhteyden ja sitten poistuin.
 ![image](https://user-images.githubusercontent.com/78509164/230762717-7ed27d42-ad38-4128-bf97-1e209d4f2a9b.png)
 
 
-Nyt on klo 11:45. Lounas ja lapset kutsuvat, joten joudun jatkamaan myöhemmin. :)
+
  
 
   
