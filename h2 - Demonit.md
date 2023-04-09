@@ -8,8 +8,8 @@ Viikko 2 Palvelinten hallinta-kurssia. Aiheena Demonit.
 -
 ....
 
-Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04, lisäksi ssh-yhteystesteissä otan tarvittaessa yhteyttä virtuaalikoneelle, jossa on asennettuna Fedora 37 Workstation.  
-Toteutin harjoituksen 9.4.2023 alkaen klo 10:45.
+Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04 (1 x master + 2 x slave), lisäksi ssh-yhteystesteissä otan tarvittaessa yhteyttä virtuaalikoneelle, jossa on asennettuna Fedora 37 Workstation.  
+Toteutin harjoituksen 9.4.2023. // edit: automatisointiosuus 10.4. ->
 
 ## OpenSSH palvelimen asennus käsin
 
@@ -43,6 +43,13 @@ Sitten vielä muokkasin **sshd_config** tiedostoa, jotta ssh-palvelin kuuntelee 
  ![ssh2244](https://user-images.githubusercontent.com/78509164/230765761-d8b171e0-0f10-42fd-991c-ee011acc8944.png)  
  
 ## Nyt sitten automatisointi  
+
+Alkuun piti luoda hakemisto **/srv/salt/ssh**. Siihen sitten tiedosto **sshd.sls** komennolla **sudoedit sshd.sls**. Kyseiseen tiedostoon sitten kirjoitin seuraavat:  
+
+![sshdsls](https://user-images.githubusercontent.com/78509164/230800497-5cc5cdad-0010-4e5c-bffc-7e38790a5df6.png)  
+
+
+
 
 
 ##### Lähteet
