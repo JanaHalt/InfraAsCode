@@ -65,8 +65,10 @@ Alla kuvakaappaus tuloksista. Tulos kertoo meille, että master-koneen käskyt m
 ## OpenSSH palvelimen asennus käsin
 
 OpenSSH palvelimen asennus on yksinkertaista. Komentorivillä annetaan seuraavat komennot:  
-**sudo apt-get install openssh-server**  Tämä asentaa OpenSSHn.
+**sudo apt-get install openssh-server**  Tämä asentaa OpenSSHn.  
+
 **sudo systemctl enable ssh** Tämä enabloi SSHn.  
+
 **sudo systemctl start ssh** Tämä käynnistää SSHn.
 
 
