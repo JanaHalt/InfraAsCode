@@ -81,7 +81,8 @@ Yllä init.sls tiedoston sisältö. Tiedosto sijaitsee kansiossa **/srv/salt/ssh
 
 ![image](https://user-images.githubusercontent.com/78509164/230867819-18376f6d-6684-47c2-8b18-4aab91007448.png)  
 
-JIPPII!!! Vihdoin ja viimein!! Toisella orja-koneilla siis samanlainen tulos. Ja ihan nolottaa myöntää, että vika taisi olla ainakin osaksi vain siinä, että state-tiedostossa unohdin määrityksissä tehdä kirjoittaa source-tiedoston polkuun alakansion. Elämä on, seuraavan kerran ehkä muistan paremmin! :D  
+JIPPII!!! Vihdoin ja viimein!! Ajoin sshd-staten orja-koneille komennolla **sudo salt '*' state.apply sshd**. SSHD-state toimi kuten pitikin, molemmilla orja-koneilla samalla lailla.    
+Ja ihan nolottaa myöntää, että vika taisi olla ainakin osaksi vain siinä, että state-tiedostossa unohdin määrityksissä kirjoittaa source-tiedoston polkuun alakansion. Elämä on, seuraavan kerran ehkä muistan paremmin! :D  
 
 Sitten ajoin sshd-staten orja-koneille uudestaan määrityksiä muuttamatta. Demoni ei käynnistynyt uudelleen:  
 
@@ -94,7 +95,7 @@ Seuraavaksi muokkasin sshd_config-tiedostoa, lisäämällä määrityksiin kolma
 
 ### SSH yhteys orja-koneille  
 
-Aivan lopuksi vielä testasin, saanko ssh-yhteyden orja-koneille. Käytin komentoja **ssh -p 2244 eka@192.168.100.23**  ja sama orjalle **toka**. SSH-yhteys orja-koneisiin onnistui hyvin. Kirjauduin sisään ja poistuin komennolla **exit**.  
+Aivan lopuksi vielä testasin, saanko ssh-yhteyden orja-koneille. Käytin komentoa **ssh -p 2244 eka@192.168.100.23**, sama orjalle **toka**. SSH-yhteys orja-koneisiin onnistui hyvin. Kirjauduin sisään ja poistuin komennolla **exit**.  
 
 ![image](https://user-images.githubusercontent.com/78509164/230889945-a0f443e5-4b4e-4cfd-bd92-2aa7f4c86a58.png)  
 
