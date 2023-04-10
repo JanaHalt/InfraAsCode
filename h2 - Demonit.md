@@ -2,11 +2,14 @@ Viikko 2 Palvelinten hallinta-kurssia. Aiheena Demonit.
 
 ## Lue ja tiivistä
 
-### Pkg-File-Service - Control Daemons with Salt - Change SSH Server Port
-
--
--
-....
+### Pkg-File-Service - Control Daemons with Salt - Change SSH Server Port (Karvinen 2018)
+ 
+- master-koneella voidaan luoda state, eli tila, jossa koneiden/järjestelmien halutaan olevan  
+  - ensin asennetaan haluttu palvelu  
+  - sitten muokataan konfigurointitiedosto sellaiseksi kuin halutaan  
+  - lopuksi uudelleenkäynnistetään daemon - otetaan uudet konfiguroinnit käyttöön  
+- Saltin avulla voidaan käskeä orja-koneita käyttämään master-koneella luotuja tiloja (states)
+________________________________________________________
 
 Toteutin tämän tehtävän VirtualBoxissa asennetuilla virtuaalikoneilla. Koneissa asennettuna Ubuntu 22.04 (1 x master + 2 x slave), lisäksi ssh-yhteystesteissä otan tarvittaessa yhteyttä virtuaalikoneelle, jossa on asennettuna Fedora 37 Workstation.  
 Toteutin harjoituksen 9.4.2023. // edit: automatisointiosuus 10.4. ->
@@ -15,9 +18,9 @@ Toteutin harjoituksen 9.4.2023. // edit: automatisointiosuus 10.4. ->
 
 OpenSSH palvelimen asennus on yksinkertaista.  
 
-**sudo apt-get install openssh-server**  Asennetaan OpenSSHn ja otetaan se käyttöön **sudo systemctl enable ssh**.  
+**sudo apt-get install openssh-server** Komennolla asennetaan OpenSSHn ja otetaan se käyttöön -> **sudo systemctl enable ssh**.  
 
-**sudo systemctl start sshd** komennolla käynnistetään 
+**sudo systemctl start sshd** Komennolla käynnistetään sshd.
 
 **sudo systemctl status sshd** Tarkistetaan, SSHn statuksen.  
 
@@ -48,10 +51,25 @@ Alkuun piti luoda hakemisto **/srv/salt/ssh**. Siihen sitten tiedosto **sshd.sls
 
 ![sshdsls](https://user-images.githubusercontent.com/78509164/230800497-5cc5cdad-0010-4e5c-bffc-7e38790a5df6.png)  
 
+Tässä kohtaa teki mieli kokeilla, onko master-orja yhteystyö edelleen toimiva, joten käytin komentoa **sudo salt '*' cmd.run 'hostname -I'**. Tämä palautti tällaisen virheen:  
+
+![saltvirhe](https://user-images.githubusercontent.com/78509164/230806696-3fa1d898-5972-4bc1-9f17-2e5a8c489a4e.png)  
+
+Googlettelun jälkeen selvisi, että kannattaa laittaa master-kone unohtamaan orja-koneiden avaimet komennolla **salt-run manage.down removekeys=True** ja sitten uudelleenkäynnistää *salt-minion.service* orja-koneilla, jonka jälkeen voi uudestaan käyttää master-koneella komentoa **sudo salt-key -A** , jolla hyväksytaään orja-koneiden avaimet.  
+
+![yhteysorjakoneilleok](https://user-images.githubusercontent.com/78509164/230807267-e9f731f7-ebf2-458e-b8fb-e9036d89ac78.png)
 
 
 
+Jatkuu vielä...
 
-##### Lähteet
 
-xxx
+##### Lähteet  
+
+https://docs.saltproject.io/en/latest/topics/tutorials/firewall.html#firewall  
+
+https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/?fromSearch=salt%20ssh  
+
+https://terokarvinen.com/2018/salt-states-i-want-my-computers-like-this/  
+
+____________________________________
