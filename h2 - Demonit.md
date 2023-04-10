@@ -59,9 +59,33 @@ Googlettelun jälkeen selvisi, että kannattaa laittaa master-kone unohtamaan or
 
 ![yhteysorjakoneilleok](https://user-images.githubusercontent.com/78509164/230807267-e9f731f7-ebf2-458e-b8fb-e9036d89ac78.png)
 
+Jatkuu vielä...  
 
+Jatkan nyt klo 10:15.  
+Eilisten haasteiden vuoksi teki mieli aloittaa automatisoinnin alusta asti, joten poistin koko /srv/salt-kansion master-koneelta.  
 
-Jatkuu vielä...
+Aloitin siis **alusta** ja loin tarvittavan hakemiston komennolla **sudo mkdir -p /srv/salt**.  
+Ja tähän väliin jälleen testausta, että yhteys orja-koneisiin toimii (kuva alla). Yhteys ok!    
+
+![yhteysorjiin1](https://user-images.githubusercontent.com/78509164/230853369-11d3a466-1640-4d78-853e-5a219650e106.png)  
+
+![image](https://user-images.githubusercontent.com/78509164/230865335-ea4a3322-9b7a-43ba-8b30-d4e287d59703.png)
+  
+
+Yllä init.sls tiedoston sisältö. Tiedosto sijaitsee kansiossa **/srv/salt/sshd**. Tiedosto on ns. state-tiedosto -> mitä halutaan, että kone tekee/millainen halutaan, että se on.  
+
+![image](https://user-images.githubusercontent.com/78509164/230867819-18376f6d-6684-47c2-8b18-4aab91007448.png)  
+
+JIPPII!!! Vihdoin ja viimein!! Toisella orja-koneilla siis samanlainen tulos. Ja ihan nolottaa myöntää, että vika taisi olla ainakin osaksi vain siinä, että state-tiedostossa unohdin määrityksissä tehdä kirjoittaa source-tiedoston polkuun alakansion. Elämä on, seuraavan kerran ehkä muistan paremmin! :D  
+
+Sitten ajoin sshd-staten orja-koneille uudestaan määrityksiä muuttamatta. Demoni ei käynnistynyt uudelleen:  
+
+![image](https://user-images.githubusercontent.com/78509164/230869212-24496cb1-8187-4c37-9c54-87f48b5ef1eb.png)  
+
+Seuraavaksi muokkasin sshd_config-tiedostoa, lisäämällä määrityksiin kolmannen portin, 8888. Sitten testasin, käynnistyykö demoni uudelleen kun ko. state ajetaan orja-koneille. Ja demonihan käynnistyikin uudelleen, niin kuin pitikin (sama tulos toisella orja-koneella):  
+![image](https://user-images.githubusercontent.com/78509164/230870076-b470fec5-5446-4f34-a764-d7149b6abaff.png)  
+
+![image](https://user-images.githubusercontent.com/78509164/230871430-3ccf839e-0956-434a-a73e-2e5c5450ec1e.png)
 
 
 ##### Lähteet  
