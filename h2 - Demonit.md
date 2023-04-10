@@ -31,7 +31,12 @@ Sain yhteyden ja sitten poistuin.
 
 ![image](https://user-images.githubusercontent.com/78509164/230762717-7ed27d42-ad38-4128-bf97-1e209d4f2a9b.png)
 
-Kuten tuossa ekassa kuvakaappauksessa näkyy, niin ei ole määritelty yksittäisiä portteja olemaan auki/kiinni ssh:ta ajatellen. Joten seuraavaksi määritin ufw palomuurin seuraavasti:  
+Kuten tuossa ekassa kuvakaappauksessa näkyy, niin ei ole määritelty yksittäisiä portteja olemaan auki/kiinni ssh:ta ajatellen.  
+
+
+## UFW palomuurin määritykset  
+
+Seuraavaksi muokkasin ufw palomuurin määrityksiä. 
 
 ![ufwON](https://user-images.githubusercontent.com/78509164/230764370-22be4ac5-e7da-4a4d-85f3-35ded04eb63c.png)
 
@@ -85,7 +90,15 @@ Sitten ajoin sshd-staten orja-koneille uudestaan määrityksiä muuttamatta. Dem
 Seuraavaksi muokkasin sshd_config-tiedostoa, lisäämällä määrityksiin kolmannen portin, 8888. Sitten testasin, käynnistyykö demoni uudelleen kun ko. state ajetaan orja-koneille. Ja demonihan käynnistyikin uudelleen, niin kuin pitikin (sama tulos toisella orja-koneella):  
 ![image](https://user-images.githubusercontent.com/78509164/230870076-b470fec5-5446-4f34-a764-d7149b6abaff.png)  
 
-![image](https://user-images.githubusercontent.com/78509164/230871430-3ccf839e-0956-434a-a73e-2e5c5450ec1e.png)
+![image](https://user-images.githubusercontent.com/78509164/230871430-3ccf839e-0956-434a-a73e-2e5c5450ec1e.png)  
+
+### SSH yhteys orja-koneille  
+
+Aivan lopuksi vielä testasin, saanko ssh-yhteyden orja-koneille. Käytin komentoja **ssh -p 2244 eka@192.168.100.23**  ja sama orjalle **toka**. SSH-yhteys orja-koneisiin onnistui hyvin. Kirjauduin sisään ja poistuin komennolla **exit**.  
+
+![image](https://user-images.githubusercontent.com/78509164/230889945-a0f443e5-4b4e-4cfd-bd92-2aa7f4c86a58.png)  
+
+![image](https://user-images.githubusercontent.com/78509164/230890522-c0ff4ecf-7c39-4635-b0ad-84f5073b1129.png)
 
 
 ##### Lähteet  
