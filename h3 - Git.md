@@ -43,5 +43,15 @@ Tein muutoksia **README.md** tiedostoon:
 
 ![nanoreadme2](https://user-images.githubusercontent.com/78509164/231700180-879a5858-be2c-4498-94f7-d74e753ebe3b.png)  
 
+Seuraavaksi sitten laitoin muutokset palvelimelle. Käytin "yhdistelmäkomentoa" **git add . && git commit; git pull && git push**. Ja siinähän ne muutokset näkyvät!  
+
+![muutoksetwebissä](https://user-images.githubusercontent.com/78509164/231722849-a99e0d68-178b-40fa-9bf5-be733b606c1b.png)  
+
+## C) Doh! Silly change, no commit, git reset --hard  
+
+
+
+
+
 
 
