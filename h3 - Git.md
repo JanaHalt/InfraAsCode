@@ -76,6 +76,9 @@ Analyysini sisältää osittain oletuksia, kaikki ei välttämättä ole aitoa f
 - sitten vihreällä: yksi +, jonka vieressä on  tyhjä tila kertoo, että lisäsin tyhjän rivin. + ja tekst sen vieressä kertovat, mitä tekstiä lisäsin  
 - sitten taas seuraava commit ja sen tunnistenumero sekä author, päivämäärä + aika, jne 
 
+Lopuksi vielä sähköpostiosoitteen tarkistus. Kuten näkyy tuossa log-kuvassa ylempänä, sähköpostini näkyy yhdessä kohdassa 
+"normaalina", eli *janahalt@debiandesktop.homework* ja toisessa kohdassa taas aika hassusti *78509164+JanaHalt@users.noreply.github.com*. Syy tähän lienee se, että tuo "hassu" sähköpostiosoite on sen commitin kohdalla (initial commit), jonka tein githubin nettisivujen kautta. Se toinen taas on tehty virtuaalikoneeni komentoriviltä käsin.  
+Eli nimeni ja sähköpostiosoitteeni näkyvät siten kuin haluan. Jos olisi tarvetta, niin niitä voisi korjata komennoilla **git config --global user.email "testitestaaja@esimerkki.com"** ja **git config --global user.name "Testi Testaaja"**.
 
 
 
