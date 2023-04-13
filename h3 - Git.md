@@ -12,7 +12,7 @@ ______________________________________
 
 ## B) Dolly - Clone, Change, Push  
 
-Seuraavassa vaiheessa kloonaan äsken luodun repositoryn itselleni virtuaalikoneen komentoriviltä käsin. Sitä varten tarvitsen 
+Seuraavassa vaiheessa kloonasin äsken luodun repositoryn itselleni virtuaalikoneen komentoriviltä käsin. Sitä varten tarvitsen 
 linkin, jonka avulla kloonaus tapahtuu. Sen saan näin:  
 - mene repositoryn sivuille  
 - klikkaa **Code**  
@@ -49,9 +49,11 @@ Seuraavaksi sitten laitoin muutokset palvelimelle. Käytin "yhdistelmäkomentoa"
 
 ## C) Doh! Silly change, no commit, git reset --hard  
 
+Seuraavaksi hölmö muutos ja sen poistaminen **git reset --hard** komennolla. Eli menin taas muokkaamaan **README.md** tiedostoa. Sen jälkeen käytin komentoa **git add .**  Tarkistin komennolla **cat README.md**, että muutos meni tiedostoon. En kuitenkaan käyttänyt **git commit** komentoa, vaan poistin tuon muutoksen, *oho, mitä nyt!"* komennolla **git reset --hard**.  Ja komentohan toimi kuten pitikin.
 
+![ohomitänyt3](https://user-images.githubusercontent.com/78509164/231735317-616ab8c3-a384-4bf4-9fcf-9d62b620f108.png)  
 
-
+## D) Tukki - check out and explain git log  
 
 
 
