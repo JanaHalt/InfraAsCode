@@ -1,0 +1,47 @@
+Toteutan tehtävän 13.4.2023. Käytän pöytäkonetta, jossa on Windows 10 viimeisimpine päivityksineen sekä VirtualBoxissa 
+toimivaa virtuaalikonetta, jossa on asennettu Debian 11.
+
+## A) Online - New repository  
+
+Loin uuden repositoryn menemällä omassa profiilissa välilehdelle **"Repositories"** ja sieltä klikkaamalla **"New"**. 
+Näkyviin tulee sivu, jossa sitten täytetään uuden repositoryn tiedot. Kuten läksyn ohjeessa sanottiin, niin repositoryn 
+nimessä ja lyhyessä kuvauksessa on sana "summer".
+![uusirepo1](https://user-images.githubusercontent.com/78509164/231682123-159f3fb8-4b2d-4f2a-a3ab-2835e21cc2fd.png)  
+______________________________________
+![uusirepo2](https://user-images.githubusercontent.com/78509164/231683211-5f54723f-766e-42c2-91ac-c7940e2f8d4c.png)  
+
+## B) Dolly - Clone, Change, Push  
+
+Seuraavassa vaiheessa kloonaan äsken luodun repositoryn itselleni virtuaalikoneen komentoriviltä käsin. Sitä varten tarvitsen 
+linkin, jonka avulla kloonaus tapahtuu. Sen saan näin:  
+- mene repositoryn sivuille  
+- klikkaa **Code**  
+- klikkaa **SSH**  
+- kopioi linkki  
+
+![sshlinkki](https://user-images.githubusercontent.com/78509164/231691352-3a8c8905-f36b-4480-bedd-efcfef001010.png)  
+
+Sitten kloonaamaan. Eli komentorivillä **git clone [ssh-kloonauslinkki]** ja enter. Tästä sitten toki tuli virheviesti, 
+ettei minulla ole pääsyä, koska publickey puuttuu. Joten mennäänpä hoitamaan asia kuntoon.  
+
+Komentorivillä:  
+- **ssh-keygen**  
+- **cat /home/janahalt/.ssh/id_rsa.pub**  
+- kopioin publickey:n 
+
+Githubissa omaan profiiliin, sieltä asetuksiin ja **SSH and GPG keys** ja **New SSH key**.  
+![sshavainlisätty](https://user-images.githubusercontent.com/78509164/231695309-f4c1cd40-f83f-4be6-814a-42a5ab0fc8d2.png)  
+
+Nyt sitten päästään jatkamaan repositoryn kloonausta. Eli komentorivillä **git clone [ssh-kloonauslinkki]**
+
+![repokloonattu](https://user-images.githubusercontent.com/78509164/231696611-a104d869-eebc-42c0-9aed-bb9ee23cbce1.png)  
+
+Komennolla **git pull** tarkistin, että ollaan up to date, vaikka toki tässä tapauksessa se oli turhaa, mutta kuitenkin. 
+Harjoituksen vuoksi :)  
+Tein muutoksia **README.md** tiedostoon:  
+![nanoreadme1](https://user-images.githubusercontent.com/78509164/231699752-87639305-b564-44b1-86d0-a4c52a45c663.png)  
+
+![nanoreadme2](https://user-images.githubusercontent.com/78509164/231700180-879a5858-be2c-4498-94f7-d74e753ebe3b.png)  
+
+
+
