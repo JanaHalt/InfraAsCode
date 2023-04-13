@@ -30,6 +30,7 @@ Komentorivillä:
 - kopioin publickey:n 
 
 Githubissa omaan profiiliin, sieltä asetuksiin ja **SSH and GPG keys** ja **New SSH key**.  
+
 ![sshavainlisätty](https://user-images.githubusercontent.com/78509164/231695309-f4c1cd40-f83f-4be6-814a-42a5ab0fc8d2.png)  
 
 Nyt sitten päästään jatkamaan repositoryn kloonausta. Eli komentorivillä **git clone [ssh-kloonauslinkki]**
@@ -39,6 +40,7 @@ Nyt sitten päästään jatkamaan repositoryn kloonausta. Eli komentorivillä **
 Komennolla **git pull** tarkistin, että ollaan up to date, vaikka toki tässä tapauksessa se oli turhaa, mutta kuitenkin. 
 Harjoituksen vuoksi :)  
 Tein muutoksia **README.md** tiedostoon:  
+
 ![nanoreadme1](https://user-images.githubusercontent.com/78509164/231699752-87639305-b564-44b1-86d0-a4c52a45c663.png)  
 
 ![nanoreadme2](https://user-images.githubusercontent.com/78509164/231700180-879a5858-be2c-4498-94f7-d74e753ebe3b.png)  
