@@ -69,7 +69,7 @@ Analyysini sisältää osittain oletuksia, kaikki ei välttämättä ole aitoa f
 - index ....: En ole varma mistä tämä kertoo. Olisiko jokin tunniste, vaikka sen tarkan kohdan tunniste, johon on muutos tehty?  
 - --- a/ ja +++ b/: kertovat taas mihin tiedostoon on tehty muutoksia?  
 - se vaaleansininen "@@ ... @@"": kertonee riveistä, joilla on tehty muutoksia  
-- # SummerFun: repositoryn nimi
+- SummerFun: repositoryn nimi
 - Super Funny Summer Project: repositoryn lyhyt kuvaus  
 - sitten vihreällä: yksi +, jonka vieressä on  tyhjä tila kertoo, että lisäsin tyhjän rivin. + ja tekst sen vieressä kertovat, mitä tekstiä lisäsin  
 - sitten taas seuraava commit ja sen tunnistenumero sekä author, päivämäärä + aika, jne 
