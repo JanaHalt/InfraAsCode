@@ -41,7 +41,10 @@ Jatkoin luomalla tiedoston **init.sls** kansioon **/srv/salt/scripts**. Tässä 
 ![init](https://user-images.githubusercontent.com/78509164/233987653-090ea11f-ef48-43ce-90a9-f6b79345b79d.png)  
 
 Eli kummallekin skriptille loin oman tilan.  
-**file.managed** luo uuden tiedoston orja-koneelle. **name** kertoo polun, mihin tiedosto orja-koneella luodaan. **source** kertoo polun, josta tiedosto kopioidaan ja **mode 0755** tarkoittaa, että käyttäjä/omistaja voi lukea, kirjoittaa ja suorittaa, ryhmä voi lukea ja suorittaa ja muut voivat lukea ja suorittaa tiedostoa.  
+**file.managed** luo uuden tiedoston orja-koneelle.  
+**name** kertoo polun, mihin tiedosto orja-koneella luodaan.  
+**source** kertoo polun, josta tiedosto kopioidaan.  
+**mode 0755** tarkoittaa, että käyttäjä/omistaja voi lukea, kirjoittaa ja suorittaa, ryhmä voi lukea ja suorittaa ja muut voivat lukea ja suorittaa tiedostoa.  
 
 Ennen kuin testasin, toimiiko tila koneille, halusin varmistaa, että yhteys orja-koneisiin on toimiva. Joten käytin komentoa **sudo salt '*' test.ping**. Ja yhteyshän toimi:  
 
