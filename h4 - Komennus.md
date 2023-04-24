@@ -36,4 +36,10 @@ Kun varmistuin siitä, että molemmat skriptit toimivat paikallisesti, lähdin t
 
 ![salt1](https://user-images.githubusercontent.com/78509164/233979624-50022db2-5538-462f-80a5-645ee9462232.png)  
 
-Jatkoin luomalla tiedoston **init.sls** kansioon **/srv/salt/scripts**. 
+Jatkoin luomalla tiedoston **init.sls** kansioon **/srv/salt/scripts**. Tässä tuon tiedoston sisältö:  
+
+![init](https://user-images.githubusercontent.com/78509164/233987653-090ea11f-ef48-43ce-90a9-f6b79345b79d.png)  
+
+*'mode 0755'* tarkoittaa, että käyttäjä/omistaja voi lukea, kirjoittaa ja suorittaa, ryhmä voi lukea ja suorittaa ja muut voivat lukea ja suorittaa tiedostoa.  
+
+
