@@ -14,7 +14,7 @@ Ensiksi loin skriptin **hello.sh**. Kirjoitin sen nanossa, joten aloitin komenno
 
 ![HelloSkripti2](https://user-images.githubusercontent.com/78509164/233947746-f9daa704-280c-4e93-b6f8-8bd9caaaf794.png)  
 
-Tämän jälkeen kopioin skriptin **/usr/local/bin** ja **ls** komennolla tarkistin, että se kopioitui sinne. Tuossa kansiossa olevia ohjelmia pystyvät käyttämään myös peruskäyttäjät. Lisäksi nyt skriptiä pystyy ajamaan pelkällä **hello.sh** komennolla, kts alla:  
+Tämän jälkeen kopioin skriptin **/usr/local/bin** ja **ls** komennolla tarkistin, että se kopioitui sinne ja siirryin takaisin kotihakemistooni (**/home/vagrant**) komennolla **cd**. **/usr/local/bin** kansiossa olevia ohjelmia pystyvät käyttämään myös peruskäyttäjät. Lisäksi nyt skriptiä pystyy ajamaan pelkällä **hello.sh** komennolla, kts alla:  
 
 ![HelloSkripti3](https://user-images.githubusercontent.com/78509164/233963255-72a1c91a-bb3e-4d33-b9cd-7a73539f6a17.png)  
 
@@ -24,4 +24,8 @@ Seuraavana kirjoitin **helloworld.py** skriptin. Tämä skripti eroaa edellisest
 
 ![HelloWorld1](https://user-images.githubusercontent.com/78509164/233968599-7a447b81-24aa-43c7-848a-9a7c8e6ca0fe.png)  
 
-Jotta skriptiä voisi ajaa kaikki käyttäjät pelkällä **helloworld.py** komennolla, kopioin sen kansioon **/usr/local/bin**. 
+Jotta skriptiä voisi ajaa kaikki käyttäjät pelkällä **helloworld.py** komennolla, kopioin sen kansioon **/usr/local/bin**. Jälleen tarkistin onnistuneen kopioitumisen komennolla **ls** ja komennolla **cd** siirryin takaisin kotihakemistooni. Siellä sitten testasin, että skriptiä pystyy ajamaan pelkällä **helloworld.py** komennolla.
+
+![HelloWorld2](https://user-images.githubusercontent.com/78509164/233971418-fa0275a6-d9a5-4755-8312-02eca30625e7.png)  
+
+
