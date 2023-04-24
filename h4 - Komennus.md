@@ -10,7 +10,7 @@ Teen harjoituksen 24.4.2023 seuraavalla kokoonpanolla:
 ```  
 
 ### a) Hello.sh  
-Ensiksi loin skriptin **hello.sh**. Kirjoitin sen nanossa, joten aloitin komennolla **nano hello.sh**. Skriptin luomisen jälkeen annoin kaikille oikeudet suorittaa ko. skriptiä - käyttöoikeuksien muokkaamiseen käytin komentoa **chmod ugo+x hello.sh**. Lopuksi vielä kokeilin suorittaa sitä paikellisesti master-koneella komennolla **./hello.sh**. Alla näkyy tulos:  
+Ensiksi loin skriptin ````hello.sh```. Kirjoitin sen nanossa, joten aloitin komennolla **nano hello.sh**. Skriptin luomisen jälkeen annoin kaikille oikeudet suorittaa ko. skriptiä - käyttöoikeuksien muokkaamiseen käytin komentoa **chmod ugo+x hello.sh**. Lopuksi vielä kokeilin suorittaa sitä paikellisesti master-koneella komennolla **./hello.sh**. Alla näkyy tulos:  
 
 ![HelloSkripti2](https://user-images.githubusercontent.com/78509164/233947746-f9daa704-280c-4e93-b6f8-8bd9caaaf794.png)  
 
