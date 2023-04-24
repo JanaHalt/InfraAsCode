@@ -53,3 +53,10 @@ Ennen kuin testasin, toimiiko tila koneille, halusin varmistaa, että yhteys orj
 Jatkoin komennolla ```sudo salt '*' state.apply scripts```, ja tämä toimi kuten pitikin. Kuvakaappauksessa alla näkyy lopputulos orja-koneelle t002. Orja-koneella t001 tulos oli täysin sama.  
 
 ![skriptittoimii1](https://user-images.githubusercontent.com/78509164/233991692-98406521-b480-45f5-acf6-990c2f3415e2.png)  
+
+### Asenna  
+
+Tässä kohtaa oli tarkoitus asentaa jokin yhden binäärin ohjelma Saltilla orjille. Päädyin microon. Ensin asensin sen master-koneelle. Asensin micron githubista ```wget https://github.com/zyedidia/micro/releases/download/v2.0.11/micro-2.0.11-linux64-static.tar.gz```. Sitten purin ladatun tiedoston komennolla ```tar -xf micro-2.0.11-linux64-static.tar.gz```. Tarkistuksena vielä kurkkasin micro-2.0.11 kansion sisältöön:  
+
+![microasennus2](https://user-images.githubusercontent.com/78509164/233997774-94a3bd33-5088-4767-8380-402da7ca401c.png)  
+
