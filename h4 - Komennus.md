@@ -74,3 +74,10 @@ Jatkoin testaamalla, asentaako komento ```sudo salt '*' state.apply scripts``` m
 
 Kuten yllä olevassa kuvassa näkyy, micron asennus orja-koneille onnistui. Kuvassa orja-koneen t002 lopputulos. Orja-koneen t001 lopputulos oli sama. Huomaa, että kohdassa **succeeded** lukee **3 (changed=1)**, eli tapahtui vain yksi muutos = micron asennus. 
 
+Aivan lopuksi vielä testasin, toimiiko äsken orja-koneille asennettu micro. Olin kirjautuneena master-koneelle, joten kirjauduin ulos komennolla ```exit``` ja sitten kirjauduin orja-koneelle ```t001``` komennolla ```vagrant ssh t001```. Sitten pääsin kokeilemaan microa:  
+
+![microkokeilut001](https://user-images.githubusercontent.com/78509164/234039756-190039d6-1c50-4121-a195-b721077d46b8.png)  
+
+![microkokeilut001toimii](https://user-images.githubusercontent.com/78509164/234039833-01a0f092-3407-4c14-967f-d700ad8b403b.png)  
+
+Kaikki kunnossa :) 
