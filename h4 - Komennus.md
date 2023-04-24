@@ -80,4 +80,4 @@ Aivan lopuksi vielä testasin, toimiiko äsken orja-koneille asennettu micro. Ol
 
 ![microkokeilut001toimii](https://user-images.githubusercontent.com/78509164/234039833-01a0f092-3407-4c14-967f-d700ad8b403b.png)  
 
-Kaikki kunnossa :) 
+Kaikki kunnossa :)  
