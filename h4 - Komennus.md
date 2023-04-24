@@ -9,7 +9,7 @@ Teen harjoituksen 24.4.2023 seuraavalla kokoonpanolla:
 - Virtuaalikoneilla Debian 11  
 ```  
 
-### Hello.sh  
+### a) Hello.sh  
 Ensiksi loin skriptin **hello.sh**. Kirjoitin sen nanossa, joten aloitin komennolla **nano hello.sh**. Skriptin luomisen jälkeen annoin kaikille oikeudet suorittaa ko. skriptiä - käyttöoikeuksien muokkaamiseen käytin komentoa **chmod ugo+x hello.sh**. Lopuksi vielä kokeilin suorittaa sitä paikellisesti master-koneella komennolla **./hello.sh**. Alla näkyy tulos:  
 
 ![HelloSkripti2](https://user-images.githubusercontent.com/78509164/233947746-f9daa704-280c-4e93-b6f8-8bd9caaaf794.png)  
@@ -18,7 +18,7 @@ Tämän jälkeen kopioin skriptin **/usr/local/bin** ja **ls** komennolla tarkis
 
 ![HelloSkripti3](https://user-images.githubusercontent.com/78509164/233963255-72a1c91a-bb3e-4d33-b9cd-7a73539f6a17.png)  
 
-### Hello.py  
+### b) Hello.py  
 
 Seuraavana kirjoitin **helloworld.py** skriptin. Tämä skripti eroaa edellisestä hello.sh skriptistä siten, että edellinen suoritetaan bash-kielellä ja tämä pythonilla. Tätäkin skriptiä kirjoitin nanossa, eli aloitin komennolla **nano helloworld.py**. Tämänkin skriptin käyttöoikeuksia muokkasin samalla komennolla kuin edellisen skriptin kohdalla: **chmod ugo+x helloworld.py**. Testasin paikallisesti skriptin toimivuutta master-koneella komennolla **./helloworld.py**:  
 
@@ -28,4 +28,6 @@ Jotta skriptiä voisi ajaa kaikki käyttäjät pelkällä **helloworld.py** kome
 
 ![HelloWorld2](https://user-images.githubusercontent.com/78509164/233971418-fa0275a6-d9a5-4755-8312-02eca30625e7.png)  
 
+### c) Automatisointi Saltilla  
 
+Kun varmistuin siitä, että molemmat skriptit toimivat paikallisesti, lähdin toteuttamaan niiden automatisoinnin Saltilla. 
