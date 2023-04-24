@@ -60,3 +60,17 @@ Tässä kohtaa oli tarkoitus asentaa jokin yhden binäärin ohjelma Saltilla orj
 
 ![microasennus2](https://user-images.githubusercontent.com/78509164/233997774-94a3bd33-5088-4767-8380-402da7ca401c.png)  
 
+Jotta pystyisin asentamaan **micron** myös orja-koneille Saltin avulla, se piti kopioida ```/srv/salt/scripts``` kansioon. Olin kansiossa ```/home/vagrant/micro-2.0.11``` ja käytin komentoa ```sudo cp micro /srv/salt/scripts```. Sitten vielä tarkistus ```cd /srv/salt/scripts``` ja ```ls```:  
+
+![microasennus3](https://user-images.githubusercontent.com/78509164/234000528-e6dd35b2-6785-4109-a8ca-5f7186af6857.png)  
+
+Seuraavaksi muokkasin ```init.sls``` tiedostoa. Lisäsin sinne tämän:  
+
+![microtila](https://user-images.githubusercontent.com/78509164/234004878-84b26888-0eb3-409f-9a58-39caa75b6dc2.png)  
+
+Jatkoin testaamalla, asentaako komento ```sudo salt '*' state.apply scripts``` micron orja-koneille:  
+
+![microasennus4](https://user-images.githubusercontent.com/78509164/234005388-8bc2eded-43ac-404e-94cf-2f194a16da0a.png)  
+
+Kuten yllä olevassa kuvassa näkyy, micron asennus orja-koneille onnistui. Kuvassa orja-koneen t002 lopputulos. Orja-koneen t001 lopputulos oli sama. Huomaa, että kohdassa **succeeded** lukee **3 (changed=1)**, eli tapahtui vain yksi muutos = micron asennus. 
+
