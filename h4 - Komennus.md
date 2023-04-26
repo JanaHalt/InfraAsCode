@@ -32,7 +32,8 @@ Jotta skriptiä voisi ajaa kaikki käyttäjät pelkällä ```helloworld.py``` ko
 
 Kun varmistuin siitä, että molemmat skriptit toimivat paikallisesti, lähdin toteuttamaan niiden automatisoinnin Saltilla.  
 
-*'Nyt ollaan kotihakemistossa.'* Komennolla ```sudo mkdir -p /srv/salt/scripts``` loin uuden kansion. Seuraavaksi kopioin molemmat skriptit äsken luotuun kansioon komennoilla ```sudo cp hello.sh /srv/salt/scripts``` ja ```sudo cp helloworld.py /srv/salt/scripts```. Tarkistaakseni, että kopiointi onnistuin siirryin ko. kansioon komennolla ```cd /srv/salt/scripts``` ja listasin siellä olevat tiedostot komennolla ```ls -l```. Käytin parametria ``` -l ```, jotta näkisin, että myös käyttöoikeudet pysyivät samoina = eli kaikilla suoritusoikeus.  
+*Nyt ollaan kotihakemistossa.*  
+Komennolla ```sudo mkdir -p /srv/salt/scripts``` loin uuden kansion. Seuraavaksi kopioin molemmat skriptit äsken luotuun kansioon komennoilla ```sudo cp hello.sh /srv/salt/scripts``` ja ```sudo cp helloworld.py /srv/salt/scripts```. Tarkistaakseni, että kopiointi onnistuin siirryin ko. kansioon komennolla ```cd /srv/salt/scripts``` ja listasin siellä olevat tiedostot komennolla ```ls -l```. Käytin parametria ``` -l ```, jotta näkisin, että myös käyttöoikeudet pysyivät samoina = eli kaikilla suoritusoikeus.  
 
 ![salt1](https://user-images.githubusercontent.com/78509164/233979624-50022db2-5538-462f-80a5-645ee9462232.png)  
 
