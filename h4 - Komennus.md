@@ -14,7 +14,7 @@ Ensiksi loin skriptin ```hello.sh```. Kirjoitin sen nanossa, joten aloitin komen
 
 ![HelloSkripti2](https://user-images.githubusercontent.com/78509164/233947746-f9daa704-280c-4e93-b6f8-8bd9caaaf794.png)  
 
-Tämän jälkeen kopioin skriptin ```/usr/local/bin``` ja ```ls``` komennolla tarkistin, että se kopioitui sinne ja siirryin takaisin kotihakemistooni (**/home/vagrant**) komennolla ```cd```. ```/usr/local/bin``` kansiossa olevia ohjelmia pystyvät käyttämään myös peruskäyttäjät. Lisäksi nyt skriptiä pystyy ajamaan pelkällä ```hello.sh``` komennolla, kts alla:  
+Tämän jälkeen kopioin skriptin ```/usr/local/bin``` kansioon ja ```ls``` komennolla tarkistin, että se kopioitui sinne ja siirryin takaisin kotihakemistooni (**/home/vagrant**) komennolla ```cd```. ```/usr/local/bin``` kansiossa olevia ohjelmia pystyvät käyttämään myös peruskäyttäjät. Lisäksi nyt skriptiä pystyy ajamaan pelkällä ```hello.sh``` komennolla, kts alla:  
 
 ![HelloSkripti3](https://user-images.githubusercontent.com/78509164/233963255-72a1c91a-bb3e-4d33-b9cd-7a73539f6a17.png)  
 
