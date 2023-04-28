@@ -79,11 +79,20 @@ Vaihtoehtoisesti voidaan avata uusi powershell tai komentokehote ikkuna ja kirjo
 
 ## Installed  
 
+Latasin Micro-editorin binääritiedoston täältä: ```https://github.com/zyedidia/micro/releases```, valitsin tiedoston ```micro-2.0.11-win64.zip``` ja sitten purin sen samaan kansioon missä olin (Downloads). Kun kansio oli purettu, testasin toimiiko micro.  
+
+![micro5](https://user-images.githubusercontent.com/78509164/235138318-fa6fb739-5032-430c-a9ea-b266a12bbcf5.png)  
+
+![micro6](https://user-images.githubusercontent.com/78509164/235141107-4530613d-a2de-46d3-8bee-b8b358760e48.png)  
+
+![micro7](https://user-images.githubusercontent.com/78509164/235141144-f03079b0-7e73-4a70-a5f1-eacec2a91c2b.png)  
+
+![micro8](https://user-images.githubusercontent.com/78509164/235141182-97f89041-c03f-4970-8f48-47fadad58d3b.png)  
+
 
 ### Lähteet  
 
-https://www.windowscentral.com/how-create-and-run-batch-file-windows-10  
-
+https://www.windowscentral.com/how-create-and-run-batch-file-windows-10 
 
 :)
 
