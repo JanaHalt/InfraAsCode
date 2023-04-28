@@ -89,6 +89,15 @@ Latasin Micro-editorin binääritiedoston täältä: ```https://github.com/zyedi
 
 ![micro8](https://user-images.githubusercontent.com/78509164/235141182-97f89041-c03f-4970-8f48-47fadad58d3b.png)  
 
+Tämän jälkeen tottakai vielä kopioin ```micro.exe``` kansioon ```C:\Windows\System32``` ja testasin, pystyykö microa käyttämään mistä vaan kansiosta.  
+- kopiointi ```cp .\micro.exe C:\Windows\System32\``` 
+- kopioinnin tarkistus: ```dir C:\Windows\System32\micro.exe```, jolloin:  
+
+![micro9](https://user-images.githubusercontent.com/78509164/235143265-578a2231-d31c-4306-93b4-c4fe105a4252.png)  
+
+- toimivuuden tarkistus, C:\ hakemistossa: ```micro testing```  
+
+![micro10](https://user-images.githubusercontent.com/78509164/235143778-a83274b4-da14-4f00-8313-324c30b01508.png)  
 
 ### Lähteet  
 
