@@ -65,7 +65,7 @@ Nyt tiedetään, että salttia voi käyttää windowsilla paikallisesti vaikka t
 Skripti toimii, eli tulostaa komentoriville halutun tekstin. Kuitenkin, skriptin sisältö tuollaisena aiheuttaisi sen, että jos se avataan windowsin file-explorerista tuplaklikkaamalla, niin ikkuna vain vilahtaa auki, ilman että edes voisi ehtiä lukea sitä haluttua tekstiä.  
 Tästä syystä muokkkasin skriptin sisältöä - lisäsin sanan ```pause``` tiedoston loppuun:  
 
-## Installed  ![skripti4](https://user-images.githubusercontent.com/78509164/235124336-f8a79396-60c1-4fa3-afd0-4c3e1e0360f6.png)  
+![skripti4](https://user-images.githubusercontent.com/78509164/235124336-f8a79396-60c1-4fa3-afd0-4c3e1e0360f6.png)  
 
 Edellä mainittu muutos aiheuttaa sen, että jos skripti ajetaan komentoriviltä/powershellissä, niin haluttu teksti tulostuu ruudulle ja skripti jää odottamaan, että käyttäjä painaa jotain näppäintä, jolloin skripti loppuu.  
 File-explorerissa tuplaklikkaamalla vastaavasti skripti avaa komentokehotteen ja siihen ikkunaan tulostuu haluttu teksti. Sitten painamalla mitä vaan näppäintä skripti lopettaa ja komentokehotteen ikkuna sulkeutuu.  
@@ -76,6 +76,13 @@ Vaihtoehtoisesti voidaan avata uusi powershell tai komentokehote ikkuna ja kirjo
 ![skripti7](https://user-images.githubusercontent.com/78509164/235127285-05d1c46b-cfc4-4977-9985-0b8f4488cfb3.png)  
 
 ![skripti8](https://user-images.githubusercontent.com/78509164/235127818-0cf817a2-7322-4ea9-9a19-a1752de7cb7e.png)  
+
+## Installed  
+
+
+### Lähteet  
+
+https://www.windowscentral.com/how-create-and-run-batch-file-windows-10  
 
 
 :)
