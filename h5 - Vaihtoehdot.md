@@ -98,7 +98,7 @@ Tämän jälkeen tottakai vielä kopioin ```micro.exe``` kansioon ```C:\Windows\
 - toimivuuden tarkistus, C:\ hakemistossa: ```micro testing```  
 
 ![micro10](https://user-images.githubusercontent.com/78509164/235143778-a83274b4-da14-4f00-8313-324c30b01508.png)  
-
+ 
 ### Lähteet  
 
 https://www.windowscentral.com/how-create-and-run-batch-file-windows-10 
