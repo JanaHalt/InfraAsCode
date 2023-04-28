@@ -6,7 +6,8 @@ Aloitin harjoituksen 27.4.2023 tällä setupilla:
 ```
 - CPU Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz  3.30 GHz; RAM 8 Gt  
 - Windows 10 Pro, 64-bit  
-```
+```  
+Edit: Jatkoin harjoitusta 28.4.2023 ja tiivistelmän artikkeleista **Control Windows with Salt** (https://terokarvinen.com/2018/control-windows-with-salt/) ja **Palvelinten hallinta/Harjoitus 6 -Windows** (https://johanlindell.fi/palvelintenhallinta#h6) teen viikonloppuna 29.-30.4.2023
 
 ## Asenna Salt Windowsille  
 
@@ -101,7 +102,9 @@ Tämän jälkeen tottakai vielä kopioin ```micro.exe``` kansioon ```C:\Windows\
  
 ### Lähteet  
 
-https://www.windowscentral.com/how-create-and-run-batch-file-windows-10 
+https://www.windowscentral.com/how-create-and-run-batch-file-windows-10  
+https://github.com/zyedidia/micro/releases  
+
 
 :)
 
