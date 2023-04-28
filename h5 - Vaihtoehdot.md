@@ -54,7 +54,29 @@ Kokeilin vielä, saanko tiedostoa auki vaikka notepadilla:
 
 ## Hei ikkuna!  
 
-## Installed  
+Nyt tiedetään, että salttia voi käyttää windowsilla paikallisesti vaikka tiedostojen luomiseen (edellinen esimerkki). Minulla ei ennestään oikein ollut kokemusta powershell skriptien kanssa, joten sain vähän pähkäiltävää.  
+
+![skripti1](https://user-images.githubusercontent.com/78509164/235121602-14c7e2c9-954f-41ae-8e78-a77e66732040.png)  
+
+![skripti2](https://user-images.githubusercontent.com/78509164/235121945-f21a9ecb-cba2-4bdb-aefd-456503ed2cbb.png)  
+
+![skripti3](https://user-images.githubusercontent.com/78509164/235122226-e817036f-0dfb-4458-bb87-47e5ccfa179d.png)  
+
+Skripti toimii, eli tulostaa komentoriville halutun tekstin. Kuitenkin, skriptin sisältö tuollaisena aiheuttaisi sen, että jos se avataan windowsin file-explorerista tuplaklikkaamalla, niin ikkuna vain vilahtaa auki, ilman että edes voisi ehtiä lukea sitä haluttua tekstiä.  
+Tästä syystä muokkkasin skriptin sisältöä - lisäsin sanan ```pause``` tiedoston loppuun:  
+
+## Installed  ![skripti4](https://user-images.githubusercontent.com/78509164/235124336-f8a79396-60c1-4fa3-afd0-4c3e1e0360f6.png)  
+
+Edellä mainittu muutos aiheuttaa sen, että jos skripti ajetaan komentoriviltä/powershellissä, niin haluttu teksti tulostuu ruudulle ja skripti jää odottamaan, että käyttäjä painaa jotain näppäintä, jolloin skripti loppuu.  
+File-explorerissa tuplaklikkaamalla vastaavasti skripti avaa komentokehotteen ja siihen ikkunaan tulostuu haluttu teksti. Sitten painamalla mitä vaan näppäintä skripti lopettaa ja komentokehotteen ikkuna sulkeutuu.  
+Vaihtoehtoisesti voidaan avata uusi powershell tai komentokehote ikkuna ja kirjoittaa pelkkä ```hellowindows``` ja saadaan haluttu teksti näkyviin :)  
+
+![skripti6](https://user-images.githubusercontent.com/78509164/235126839-d0b5dce9-480e-41c0-bbbe-6fe403c11c8c.png)  
+
+![skripti7](https://user-images.githubusercontent.com/78509164/235127285-05d1c46b-cfc4-4977-9985-0b8f4488cfb3.png)  
+
+![skripti8](https://user-images.githubusercontent.com/78509164/235127818-0cf817a2-7322-4ea9-9a19-a1752de7cb7e.png)  
+
 
 :)
 
