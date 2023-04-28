@@ -38,6 +38,20 @@ Aluksi siis kopioin **salt-ohjelman** edellä mainittuun kansioon (ollessani kan
 
 ## Ei voi kalastaa  
 
+Nyt salttia pystyy käyttämään windowsilla paikallisesti. Eli PowerShellissä pääkäyttäjänä esimerkiksi komento ```salt-call --local cmd.run whoami```:  
+
+![localrun1](https://user-images.githubusercontent.com/78509164/235114661-9893a15a-ebcf-407c-825e-91ca2e9770cb.png)  
+
+Toisena esimerkkinä vaikka tiedoston luominen. Olin C:\ hakemistossa ja käytin komentoa ```salt-call --local state.single file.managed C:/Users/janka/kokeilu.txt``` ja tässä tulos:   
+
+![statesingle1](https://user-images.githubusercontent.com/78509164/235117201-a579b0a9-92c5-443e-8e43-8eb52d2b8223.png)  
+
+![statesingle2](https://user-images.githubusercontent.com/78509164/235117627-848e0879-0ffd-4086-9629-7eb5e224e486.png)  
+
+Kokeilin vielä, saanko tiedostoa auki vaikka notepadilla:  
+
+![statesingle3](https://user-images.githubusercontent.com/78509164/235118062-5f322231-7616-4cc0-b999-7a9b7f8f317a.png)  
+
 ## Hei ikkuna!  
 
 ## Installed  
