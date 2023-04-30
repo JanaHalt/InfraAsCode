@@ -1,5 +1,23 @@
 ## Lue ja tiivistä  
 
+### Control Windows with Salt - Tero Karvinen, 2018  
+
+- myös Windows käyttöjärjestelmää käyttäviä tietokoneita voidan kontrolloida Saltilla  
+- master-koneella olevan Saltin version on aina oltava sama tai uudempi kuin orja-koneilla  
+- Saltia voidaan hyödyntää myös erilaisten ohjelmien asentamiseen  Windows-koneelle  
+- PowerShellia voi hyödyntää monen asian hoitamiseen Windowsissa, vastaavasti kuin bash Linux-pohjaisissa järjestelmissä  
+- Saltia voi käyttää myös paikallisesti - ilman master-slave setupppia  
+- Salttia pystyy käyttämään myös Windows-palvelimilla   
+
+### Windows käyttöjärjestelmä Salt-minion orjana - Toni Seppä, 2019  
+
+- master-koneena toimi DigitalOceanilla toimiva palvelin  
+- Windows-koneelle asennettiin Salt-minion ohjelma ja kerrottiin sille master-koneen osoite (IP-osoite)  
+- Salt-minionin hyväksynnän jälkeen master-slave koneiden yhteys toimi  
+- Saltin käyttö paikallisesti onnistui hyvin. Sitä testattiin komennolla ```./salt-call --local test.ping```  
+- Saltin avulla kokeiltiin, onnistuneesti, muuttaa Windows-koneen kellon päivämäärää komennon ```sudo salt '[orja-kone] salt-minion' system.set_system_date '[vuosi]-[kuukausi]-[päivä]' ```  
+- bonustehtävänä otettu chocolatey varasto käyttöön  
+
 ### Milloin ja millä  
 
 Aloitin harjoituksen 27.4.2023 tällä setupilla:  
@@ -7,39 +25,37 @@ Aloitin harjoituksen 27.4.2023 tällä setupilla:
 - CPU Intel(R) Core(TM) i5-2500K CPU @ 3.30GHz  3.30 GHz; RAM 8 Gt  
 - Windows 10 Pro, 64-bit  
 ```  
-Edit: Jatkoin harjoitusta 28.4.2023 ja tiivistelmän artikkeleista **Control Windows with Salt** (https://terokarvinen.com/2018/control-windows-with-salt/) ja **Palvelinten hallinta/Harjoitus 6 -Windows** (https://johanlindell.fi/palvelintenhallinta#h6) teen viikonloppuna 29.-30.4.2023
+Edit: Jatkoin harjoitusta 28.4.2023 ja tiivistelmän artikkeleista **Control Windows with Salt** (https://terokarvinen.com/2018/control-windows-with-salt/) ja **Windows käyttöjärjestelmä Salt-minion orjana - Toni Seppä** (https://salthomework.wordpress.com/h5/ ) teen viikonloppuna 29.-30.4.2023
 
 ## Asenna Salt Windowsille  
 
-Aloitin sillä, että latasin salt-minion ohjelman. Menin osoitteeseen ```https://repo.saltproject.io/windows/``` ja sieltä valitsin tiedoston ```Salt-Minion-Latest-Py3-AMD64.msi```. 
+Aloitin sillä, että latasin Salt-minion ohjelman. Menin osoitteeseen ```https://repo.saltproject.io/windows/``` ja sieltä valitsin tiedoston ```Salt-Minion-Latest-Py3-AMD64.msi```. 
 
 ![installingsalt1](https://user-images.githubusercontent.com/78509164/234967251-e1e8739e-8ae9-4cdf-bcdf-2714579a10a4.png)  
 
 Kun sitten avasin ladatun tiedoston, sain tällaisen virheilmoituksen:  
-
 ![installingsalt2](https://user-images.githubusercontent.com/78509164/234967572-25915858-3e90-4999-9ec7-d29ed33005b2.png)  
 
 ...joten avasin PowerShellin pääkäyttäjänä ja avasin ko. tiedoston siellä:  
 
-
 ![installingsalt3](https://user-images.githubusercontent.com/78509164/234968119-b5c4cebe-1087-4817-ae2c-b0960387588c.png)  
 
-Siitä avautui Windowsin perinteinen setup wizard ikkuna (kuten ylempänäkin näkyy) ja asennus oli vain next, next, yes, finnish-tapainen. Tämän jälkeen kokeilin ajaa komentoa ```salt-call --local test.ping```, mutta sain virheilmoituksen, ettei salt ole ajettava ohjelma/funktio/skripti tai sitä ei löydy.
+Siitä avautui Windowsin perinteinen setup wizard ikkuna (kuten ylempänäkin näkyy) ja asennus oli next, next, yes, finnish-tapainen. Tämän jälkeen kokeilin ajaa komentoa ```salt-call --local test.ping```, mutta sain virheilmoituksen, ettei Salt ole ajettava ohjelma/funktio/skripti tai sitä ei löydy.
 
 Väsymys voittaa, joten jatkan huomenna.  
 
 Edit: Jatkan 28.4.2023  
 _______________________  
 
-Eilen tosiaan harmillisesti unohdin ottaa kuvakaappauksen virheilmoituksesta, jonka sain kun kokeilin ajaa komentoa ```salt-call --local test.ping``` silloin, kun salt-ohjelma ei ollut kansiossa ```C:\Windows\System32```.  
+Eilen tosiaan harmillisesti unohdin ottaa kuvakaappauksen virheilmoituksesta, jonka sain kun kokeilin ajaa komentoa ```salt-call --local test.ping``` silloin, kun Salt-ohjelma ei ollut kansiossa ```C:\Windows\System32```.  
 Eli tänään jatketaan Windows PowerShellissä pääkäyttäjänä.  
-Aluksi siis kopioin **salt-ohjelman** edellä mainittuun kansioon (ollessani kansiossa **Downloads**) komennolla ```cp .\Salt-Minion-Latest-Py3-AMD64.msi C:\Windows\System32\```. Sen jälkeen ajoin komentoa ```salt-call --local test.ping```ja nyt se toimi odotetusti:  
+Aluksi siis kopioin **Saltin** edellä mainittuun kansioon (ollessani kansiossa **Downloads**) komennolla ```cp .\Salt-Minion-Latest-Py3-AMD64.msi C:\Windows\System32\```. Sen jälkeen ajoin komentoa ```salt-call --local test.ping```ja nyt se toimi odotetusti:  
 
 ![saltcalllocal1](https://user-images.githubusercontent.com/78509164/235097809-4553eeda-a3c6-4b9a-8ff8-b7857a83c821.png)  
 
 ## Ei voi kalastaa  
 
-Nyt salttia pystyy käyttämään windowsilla paikallisesti. Eli PowerShellissä pääkäyttäjänä esimerkiksi komento ```salt-call --local cmd.run whoami```:  
+Nyt Saltia pystyy käyttämään Windowsilla paikallisesti. Eli PowerShellissä pääkäyttäjänä esimerkiksi komento ```salt-call --local cmd.run whoami```:  
 
 ![localrun1](https://user-images.githubusercontent.com/78509164/235114661-9893a15a-ebcf-407c-825e-91ca2e9770cb.png)  
 
@@ -55,7 +71,7 @@ Kokeilin vielä, saanko tiedostoa auki vaikka notepadilla:
 
 ## Hei ikkuna!  
 
-Nyt tiedetään, että salttia voi käyttää windowsilla paikallisesti vaikka tiedostojen luomiseen (edellinen esimerkki). Minulla ei ennestään oikein ollut kokemusta powershell skriptien kanssa, joten sain vähän pähkäiltävää.  
+Nyt tiedetään, että Saltia voi käyttää Windowsilla paikallisesti vaikka tiedostojen luomiseen (edellinen esimerkki). Minulla ei ennestään oikein ollut kokemusta powershell skriptien kanssa, joten sain vähän pähkäiltävää. Löysin hyvän artikkelin **How to create and run a batch file on Windows 10** (kts lähteet), jonka ohjeita hyödynsin tässä tehtävässä.
 
 ![skripti1](https://user-images.githubusercontent.com/78509164/235121602-14c7e2c9-954f-41ae-8e78-a77e66732040.png)  
 
@@ -63,14 +79,14 @@ Nyt tiedetään, että salttia voi käyttää windowsilla paikallisesti vaikka t
 
 ![skripti3](https://user-images.githubusercontent.com/78509164/235122226-e817036f-0dfb-4458-bb87-47e5ccfa179d.png)  
 
-Skripti toimii, eli tulostaa komentoriville halutun tekstin. Kuitenkin, skriptin sisältö tuollaisena aiheuttaisi sen, että jos se avataan windowsin file-explorerista tuplaklikkaamalla, niin ikkuna vain vilahtaa auki, ilman että edes voisi ehtiä lukea sitä haluttua tekstiä.  
+Skripti toimii, eli tulostaa komentoriville halutun tekstin. Kuitenkin, skriptin sisältö tuollaisena aiheuttaisi sen, että jos se avataan Windowsin file-explorerista tuplaklikkaamalla, niin ikkuna vain vilahtaa auki, ilman että edes voisi ehtiä lukea sitä haluttua tekstiä.  
 Tästä syystä muokkkasin skriptin sisältöä - lisäsin sanan ```pause``` tiedoston loppuun:  
 
 ![skripti4](https://user-images.githubusercontent.com/78509164/235124336-f8a79396-60c1-4fa3-afd0-4c3e1e0360f6.png)  
 
 Edellä mainittu muutos aiheuttaa sen, että jos skripti ajetaan komentoriviltä/powershellissä, niin haluttu teksti tulostuu ruudulle ja skripti jää odottamaan, että käyttäjä painaa jotain näppäintä, jolloin skripti loppuu.  
 File-explorerissa tuplaklikkaamalla vastaavasti skripti avaa komentokehotteen ja siihen ikkunaan tulostuu haluttu teksti. Sitten painamalla mitä vaan näppäintä skripti lopettaa ja komentokehotteen ikkuna sulkeutuu.  
-Vaihtoehtoisesti voidaan avata uusi powershell tai komentokehote ikkuna ja kirjoittaa pelkkä ```hellowindows``` ja saadaan haluttu teksti näkyviin :)  
+Vaihtoehtoisesti voidaan avata uusi powershell- tai komentokehote-ikkuna ja kirjoittaa pelkkä ```hellowindows``` ja saadaan haluttu teksti näkyviin :)  
 
 ![skripti6](https://user-images.githubusercontent.com/78509164/235126839-d0b5dce9-480e-41c0-bbbe-6fe403c11c8c.png)  
 
@@ -90,7 +106,7 @@ Latasin Micro-editorin binääritiedoston täältä: ```https://github.com/zyedi
 
 ![micro8](https://user-images.githubusercontent.com/78509164/235141182-97f89041-c03f-4970-8f48-47fadad58d3b.png)  
 
-Tämän jälkeen tottakai vielä kopioin ```micro.exe``` kansioon ```C:\Windows\System32``` ja testasin, pystyykö microa käyttämään mistä vaan kansiosta.  
+Tämän jälkeen vielä kopioin ```micro.exe``` kansioon ```C:\Windows\System32``` ja testasin, pystyykö microa käyttämään mistä vaan kansiosta.  
 - kopiointi ```cp .\micro.exe C:\Windows\System32\``` 
 - kopioinnin tarkistus: ```dir C:\Windows\System32\micro.exe```, jolloin:  
 
@@ -99,13 +115,12 @@ Tämän jälkeen tottakai vielä kopioin ```micro.exe``` kansioon ```C:\Windows\
 - toimivuuden tarkistus, C:\ hakemistossa: ```micro testing```  
 
 ![micro10](https://user-images.githubusercontent.com/78509164/235143778-a83274b4-da14-4f00-8313-324c30b01508.png)  
+
+***Kiitos!***
  
 ### Lähteet  
 
 https://www.windowscentral.com/how-create-and-run-batch-file-windows-10  
 https://github.com/zyedidia/micro/releases  
-
-
-:)
-
-...to be continued
+https://terokarvinen.com/2018/control-windows-with-salt/  
+https://salthomework.wordpress.com/h5/  
