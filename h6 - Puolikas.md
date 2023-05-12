@@ -151,7 +151,31 @@ Sitten oli vuorossa konsolin oletusväriteeman muuttaminen orja-koneella saltin 
  
  Epäilen, että virhe voi olla siinä, että kansio, johon yritän kopioida konsolin profiili-konfigurointitiedoston, on väärä. Vinkin, mihin kansioon se kannattaisi kopioida, löysin melko pitkän googlettelun jälkeen täältä <a href="https://forum.kde.org/viewtopic.php?f=22&t=29952">Global config for Konsole</a>. 
  
- Aivan lopuksi tulen mahdollisesti vielä luomaan ***top.sls*** tilan, jolla olisi mahdollista ajaa orja-koneille kaikki aikaisemmin luomani tilat kerralla. 
+ Aivan lopuksi tulen mahdollisesti vielä luomaan ***top.sls*** tilan, jolla olisi mahdollista ajaa orja-koneille kaikki aikaisemmin luomani tilat kerralla.  
+ 
+_____________________
+
+Jatkan perjantaina 12.5.23.  
+
+Eilen sain luennolla hyvän vinkin <a href="www.terokarvinen.com">Tero Karviselta</a>, että ratkaisuna ongelmaan voisi olla saltin ```file.directory```. Menin tutkimaan asiaa vielä <a href="https://docs.saltproject.io/en/latest/ref/states/all/salt.states.file.html">Saltin dokumentaatiosta</a> ja päädyin lisäämään ```colortheme``` tilan ***init.sls*** tiedostoon seuraavan pätkän:  
+
+```  
+# Check parent directory  
+/usr/share/konsole:  
+  file.directory:  
+    - user: root  
+    - group: root  
+    - dir_mode: "0755"  
+    - file_mode: "0644"  
+    - makedirs: True  
+ ```  
+ 
+Tilanne näytti korjaantuvan, sillä:  
+
+![colortheme1](https://github.com/JanaHalt/InfraAsCode/assets/78509164/96654ac9-2338-4cd4-ad17-007b3eaae698)  
+
+Mutta orja-koneella konsoli oli edelleen musta-valkoinen.  
+
 
 ### Lähteet  
 
