@@ -155,26 +155,7 @@ Sitten oli vuorossa konsolin oletusväriteeman muuttaminen orja-koneella saltin 
  
 _____________________
 
-Jatkan perjantaina 12.5.23.  
-
-Eilen sain luennolla hyvän vinkin <a href="www.terokarvinen.com">Tero Karviselta</a>, että ratkaisuna ongelmaan voisi olla saltin ```file.directory```. Menin tutkimaan asiaa vielä <a href="https://docs.saltproject.io/en/latest/ref/states/all/salt.states.file.html">Saltin dokumentaatiosta</a> ja päädyin lisäämään ```colortheme``` tilan ***init.sls*** tiedostoon seuraavan pätkän:  
-
-```  
-# Check parent directory  
-/usr/share/konsole:  
-  file.directory:  
-    - user: root  
-    - group: root  
-    - dir_mode: "0755"  
-    - file_mode: "0644"  
-    - makedirs: True  
- ```  
  
-Tilanne näytti korjaantuvan, sillä:  
-
-![colortheme1](https://github.com/JanaHalt/InfraAsCode/assets/78509164/96654ac9-2338-4cd4-ad17-007b3eaae698)  
-
-Mutta orja-koneella konsoli oli edelleen musta-valkoinen.  
 
 
 ### Lähteet  
