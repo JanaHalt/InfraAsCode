@@ -174,7 +174,13 @@ Tilanne näytti korjaantuvan, sillä:
 
 ![colortheme1](https://github.com/JanaHalt/InfraAsCode/assets/78509164/96654ac9-2338-4cd4-ad17-007b3eaae698)  
 
-Mutta orja-koneella konsoli oli edelleen musta-valkoinen. 
+Mutta orja-koneella konsoli oli edelleen musta-valkoinen.  
+
+_______________________________________  
+
+Jatkoin 14.5.2023  
+
+Konsolin oletusväriteeman muutos osoittautui varsin hankalaksi. En aikaa vievästä asian tutkimisesta huolimatta löytänyt paikkaa mihin pitäisi laittaa konfigurointitiedostoa, joka tekisi tekemästäni väriteema-profiilista oletuksen. 
 
 
 ### Lähteet  
