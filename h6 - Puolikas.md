@@ -17,17 +17,18 @@ Rautana kannettava näillä spekseillä:
 ### Asennettavat ohjelmat ja muut suunnitellut muutokset:  
 - Neovim + konfigurointi
 - .bashrc konfigurointi / alias 
-- konsolin säätöjä / oletusväriteeman muutos  
+- konsolin säätöjä / oletusväriteeman muutos => GO tools. Eli GO:n tarvitsemien työkalujen asennus 
 
 Päädyin edellä mainittuihin ohjelmiin siksi, että ne on minulle sellaisia, joiden haluan olevan kunnossa kun alan käyttää uutta/uudelleenasennettua konetta. Toteutan projektin siten, että ensin teen muutoksia ja asennan ohjelmia käsin master-koneelle ja automatisoin ne orja-koneelle asennusta varten.  
 
-### Aikaisemmat harjoitukset  
+### Aikaisemmat harjoitukset ja linkki Palvelinhallinta-kurssiin 
 
 <a href="https://github.com/JanaHalt/InfraAsCode/blob/3a0efe10fece61bdc1350247bb5709c70f993d51/h1-salt.md">H1 - Suolaa</a>
 <a href="">H2 - Demonit</a>  
 <a href="">H3 - Git</a>  
 <a href="">H4 - Komennus</a>  
 <a href="">H5 - Vaihtoehdot</a>  
+<a href="https://terokarvinen.com/2023/palvelinten-hallinta-2023-kevat/">Palvelinhallinta - kevät 2023</a>
 
 ## Valmistelu  
 
@@ -180,7 +181,24 @@ _______________________________________
 
 Jatkoin 14.5.2023  
 
-Konsolin oletusväriteeman muutos osoittautui varsin hankalaksi. En aikaa vievästä asian tutkimisesta huolimatta löytänyt paikkaa mihin pitäisi laittaa konfigurointitiedostoa, joka tekisi tekemästäni väriteema-profiilista oletuksen. 
+Konsolin oletusväriteeman muutos osoittautui varsin hankalaksi. En aikaa vievästä asian tutkimisesta huolimatta löytänyt paikkaa mihin pitäisi laittaa konfigurointitiedostoa, joka tekisi tekemästäni väriteema-profiilista oletuksen.  
+
+Lopulta päädyin vaihtamaan tavoitetta ***oletusväriteeman muutos*** toiseksi, ***GO kielen työkalujen asennus***.  
+
+## GO tools  
+
+Eli ensin käsin. Seurasin ohjetta <a href="https://developer.fedoraproject.org/tech/languages/go/go-installation.html">GO on Fedora</a>. Ihan ensimmäisena ```sudo dnf install golang```. GO:n koodia kirjoitetaan **työtilassa**, joka määritetään ***GOPATH*** muuttujan avulla. Yleensä tähän käytetään arvoa ***$HOME/go***. Joten tässä jatko:  
+
+```
+mkdir -p $HOME/go  
+echo 'export GOPATH=$HOME/go' >> $HOME/.bashrc  
+source $HOME/.bashrc  
+```  
+
+Sen jälkeen ohje neuvoi tarkistamaan, että muuttuja ***GOPATH*** on määritelty oikein ```go env GOPATH```. Muuttuja olikin määritelty oikein ja edellä mainitun komennon tuloksena saatiin:  
+```go/janahalt/go```.  
+
+Nyt sitten automatisointi:  
 
 
 ### Lähteet  
@@ -196,3 +214,7 @@ https://docs.kde.org/trunk5/en/konsole/konsole/profiles.html
 https://forum.kde.org/viewtopic.php?f=22&t=29952  
 
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/states.html#the-top-sls-file  
+
+https://developer.fedoraproject.org/tech/languages/go/go-installation.html  
+ 
+
