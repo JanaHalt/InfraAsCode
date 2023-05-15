@@ -256,5 +256,5 @@ https://forum.kde.org/viewtopic.php?f=22&t=29952
 https://docs.saltproject.io/salt/user-guide/en/latest/topics/states.html#the-top-sls-file  
 
 https://developer.fedoraproject.org/tech/languages/go/go-installation.html  
- 
 
+https://developer.fedoraproject.org/tech/languages/go/go-programs.html  
