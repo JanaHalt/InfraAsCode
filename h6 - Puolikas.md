@@ -185,6 +185,19 @@ Konsolin oletusväriteeman muutos osoittautui varsin hankalaksi. En aikaa vievä
 
 Lopulta päädyin vaihtamaan tavoitetta ***oletusväriteeman muutos*** toiseksi, ***GO kielen työkalujen asennus***.  
 
+##### EDIT 15.5.2023  
+
+En saanut rauhaa asian suhteen, joten oli pakko yrittää vielä kerran ratkaista tämä. Ja vihdoin ja viimein onnistuin! Alla init.sls tiedon sisältö, jolla sitten sain tämän toimimaan:  
+
+![konsole8](https://github.com/JanaHalt/InfraAsCode/assets/78509164/085aec85-71cf-4240-85a6-77b9caeed23e)  
+
+Ja tässä näkyy, että myös orja-koneella on vaihtunut oletusväriteema:  
+
+![konsole9](https://github.com/JanaHalt/InfraAsCode/assets/78509164/3f96e427-277b-407e-84dc-959498596e7b)  
+
+![konsole10](https://github.com/JanaHalt/InfraAsCode/assets/78509164/3a43f918-1a44-47ba-8ad2-67605ad6b51e)
+
+
 ## GO tools  
 
 Eli ensin käsin. Seurasin ohjetta <a href="https://developer.fedoraproject.org/tech/languages/go/go-installation.html">GO on Fedora</a>. Ihan ensimmäisena ```sudo dnf install golang```. GO:n koodia kirjoitetaan **työtilassa**, joka määritetään ***GOPATH*** muuttujan avulla. Yleensä tähän käytetään arvoa ***$HOME/go***. Joten tässä jatko:  
