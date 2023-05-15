@@ -239,6 +239,20 @@ Seuraavaksi menin testaamaan suoraan orja-koneelle, että kaikki on kuten pitä�
 
 ![GOin4](https://github.com/JanaHalt/InfraAsCode/assets/78509164/831a2e61-8cd4-4e29-86de-d159ba2e7cc6)  
 
+## TOP.SLS  
+
+Tällä tila-tiedostolla voidaan kaikki aiemmin luodut tilat ajaa orja-koneelle kerralla komennolla ```sudo salt '*' state.highstate```. Alla ko. tiedoston sisältö:  
+
+```  
+base:  
+  '*':
+    - alias  
+    - colortheme  
+    - golang  
+    - neovim  
+```  
+
+![TOPSLS](https://github.com/JanaHalt/InfraAsCode/assets/78509164/906b159d-876e-494a-a06a-6f94e6f5e4dd)  
 
 
 
