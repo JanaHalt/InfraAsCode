@@ -206,6 +206,27 @@ Lopuksi piti tottakai kokeilla, toimiiko edellä asennettu oikeasti. Koska en os
 
 Nyt sitten automatisointi:  
 
+Loin uuden kansion ***golang*** kansioon ```/srv/salt/```. Tähän uuteen kansioon loin sitten uuden tila-tiedoston ***init.sls***, tällä sisällöllä:  
+
+![GOin1](https://github.com/JanaHalt/InfraAsCode/assets/78509164/286dfa2f-f92d-47f5-a8e3-5332fd260304)  
+
+***pkg.installed*** osuus asentui onnistuneesti, mutta **init.sls**:n toisesta osuudesta tuli virheilmoitus:  
+
+![GOin2](https://github.com/JanaHalt/InfraAsCode/assets/78509164/f5c87739-3206-4acb-bf56-b2e311a53a09)  
+
+Kokeilin muuttaa init.sls tiedostossa kohdan ```$HOME/go``` -> ```~/$HOME/go``` ja nyt tilan ajaminen onnistui ongelmitta.  
+
+
+![GOin3](https://github.com/JanaHalt/InfraAsCode/assets/78509164/45e94d7b-128a-4682-9f56-5d454751df9e)  
+
+Seuraavaksi menin testaamaan suoraan orja-koneelle, että kaikki on kuten pitää. Alla kuvakaappaukset testauksesta:  
+
+![GOin5](https://github.com/JanaHalt/InfraAsCode/assets/78509164/b222f13f-a63f-4075-9085-acd0f84ee7eb)  
+
+![GOin4](https://github.com/JanaHalt/InfraAsCode/assets/78509164/831a2e61-8cd4-4e29-86de-d159ba2e7cc6)  
+
+
+
 
 ### Lähteet  
 
