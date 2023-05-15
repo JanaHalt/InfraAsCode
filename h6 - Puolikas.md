@@ -198,6 +198,12 @@ source $HOME/.bashrc
 Sen jälkeen ohje neuvoi tarkistamaan, että muuttuja ***GOPATH*** on määritelty oikein ```go env GOPATH```. Muuttuja olikin määritelty oikein ja edellä mainitun komennon tuloksena saatiin:  
 ```go/janahalt/go```.  
 
+Lopuksi piti tottakai kokeilla, toimiiko edellä asennettu oikeasti. Koska en osaa koodata GO:ssa, niin kirjoitin täysin esimerkkiohjelman kuin ohjeessa <a href="https://developer.fedoraproject.org/tech/languages/go/go-programs.html">Writing Go programs</a>. Eli ensin loin kansion, johon ohjelmani tulisi, sitten siirryin siihen kansioon ja loin tyhjän tiedoston **hello.go**. Alla näkyy myös ***hello.go*** tiedoston sisältö. Samassa kansiossa ollessa voidaan luotua ohjelmaa ajaa komennolla ```go run [ohjelman nimi]```. Tämä tapa soveltuu pienille ja nopeille kokeiluile. <a href="https://developer.fedoraproject.org/tech/languages/go/go-programs.html">Writing Go programs</a> sivulla löytyy tarkemmat ohjeet, mikäli haluaa kirjoittaa ohjeilmia, joilla on riippuvuuksia yms.  
+
+![GO2](https://github.com/JanaHalt/InfraAsCode/assets/78509164/495ae6d9-936f-413a-a079-135e36bd4abd)  
+
+![GO3](https://github.com/JanaHalt/InfraAsCode/assets/78509164/d790f3a5-de10-44d3-b2f2-ed93071d21f1)  
+
 Nyt sitten automatisointi:  
 
 
