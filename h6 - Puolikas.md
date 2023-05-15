@@ -17,7 +17,8 @@ Rautana kannettava näillä spekseillä:
 ### Asennettavat ohjelmat ja muut suunnitellut muutokset:  
 - Neovim + konfigurointi
 - .bashrc konfigurointi / alias 
-- konsolin säätöjä / oletusväriteeman muutos => GO tools. Eli GO:n tarvitsemien työkalujen asennus 
+- konsolin säätöjä / oletusväriteeman muutos  
+- GO tools. Eli GO:n tarvitsemien työkalujen asennus 
 
 Päädyin edellä mainittuihin ohjelmiin siksi, että ne on minulle sellaisia, joiden haluan olevan kunnossa kun alan käyttää uutta/uudelleenasennettua konetta. Toteutan projektin siten, että ensin teen muutoksia ja asennan ohjelmia käsin master-koneelle ja automatisoin ne orja-koneelle asennusta varten.  
 
