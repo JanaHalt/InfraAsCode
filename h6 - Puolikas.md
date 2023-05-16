@@ -10,7 +10,8 @@ Toteutin projektin VirtualBoxissa kahdella virtuaalikoneella, joihin asensin Fed
 
 Rautana kannettava näillä spekseillä:  
 ```
-- CPU AMD Ryzen 7 4700U, Radeon Graphics, 2,00 GHz; RAM 16 Gt  
+- CPU AMD Ryzen 7 4700U, Radeon Graphics, 2,00 GHz  
+- RAM 16 Gt  
 - Windows 11 Home, 64-bit  
 ```  
 
@@ -76,11 +77,11 @@ Jotta saisin saman konfigurointimuutoksen voimaan myös orja-koneelle, aloitin s
  Tämän jälkeen muokkasin ***neovim***-tilaa, eli lisäsin neovim-tilassa olevaan init.sls tiedostoon seuraavan tekstin:  
  
 ```
-#show row-numbers  
-   /usr/share/nvim/sysinit.vim:
-     file.managed:
-       - source: salt://neovim/init.vim  
-       - mode: "644"  
+# Show row-numbers  
+  /usr/share/nvim/sysinit.vim:
+    file.managed:
+      - source: salt://neovim/init.vim  
+      - mode: "0644"  
 ```  
 
 Mode 644 tarkoittaa, että tiedoston omistajalla on luku- ja kirjoitusoikeus ja ryhmällä sekä muilla on vain lukuoikeus. Sitten ajoin tilan orja-koneelle komennolla ```sudo salt 'jhminion' state.apply neovim``` ja sain onnistuneen tuloksen:  
@@ -96,7 +97,7 @@ Testasin vielä, että **Neovim** orja-koneella käynnistyy siten, että rivinum
 Välillä kyllästyttää kirjoittaa pitkää komentoa ```sudo dnf update```. Päätin tehdä sille aliaksen ja siitä sitten tilan, jota voin ajaa sitä orja-koneelle, jotta se toimii siinäkin. Hyödynsin ohjetta <a href="https://linuxize.com/post/how-to-create-bash-aliases/">How to create bash aliases</a>. Aliakset voidaan luoda tiedostoon ***bashrc***, joka on kansiossa ***/etc***.  
 Eli menin muokkaamaan tiedostoa ***etc/bashrc*** komennolla ```sudo nvim /etc/bashrc```. Lisäsin ko. tiedoston loppuun tekstin:  
 ```
-# Create alias for dnf update  
+# Create alias  
 alias paivita="sudo dnf update -y"
 ``` 
 Tallennettuani tiedoston kirjauduin ulos käyttäjäprofiilistani ja sitten kirjauduin takaisin (jotta se konfigurointitiedosto otetaan käyttöön) ja kokeilin, toimiiko luomani alias:  
@@ -105,11 +106,11 @@ Tallennettuani tiedoston kirjauduin ulos käyttäjäprofiilistani ja sitten kirj
 
 Loin tällekin muutokselle oman salt-tilan. Eli kansiossa ***/srv/salt*** komennolla ```sudo mkdir alias```. Sitten kopioin siihen **bashrc** tiedoston komennolla ```sudo cp /etc/bashrc .```, jolloin tiedosto kopioitui haluamaani kansioon. Lopuksi loin init.sls tiedoston komennolla ```sudoedit init.sls``` ja siihen:  
 ```  
-#create alias for sudo dnf update  
-  /etc/bashrc:
-    file.managed:  
-      - source: salt://alias/bashrc  
-      - mode: "644"  
+# Create alias for sudo dnf update  
+/etc/bashrc:
+  file.managed:  
+    - source: salt://alias/bashrc  
+    - mode: "0644"  
 ```  
 
 Sitten ajoin tilan ***jhminion*** orja-koneelle komennolla ```sudo salt 'jhminion' state.apply alias```:  
@@ -142,10 +143,10 @@ Sitten oli vuorossa konsolin oletusväriteeman muuttaminen orja-koneella saltin 
 
 ```  
 # Set default color scheme for konsole  
-  /usr/share/config/konsole/Solarised.profile:  
-    file.managed:  
-      - source: salt://colortheme/Solarised.profile:  
-      - mode: "644"  
+/usr/share/config/konsole/Solarised.profile:  
+  file.managed:  
+    - source: salt://colortheme/Solarised.profile:  
+    - mode: "644"  
  ```  
  
  Ajattuani tilan orja-koneelle komennolla ```sudo salt 'jhminion' state.apply colortheme``` sain virheilmoituksen:  
