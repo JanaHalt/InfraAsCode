@@ -194,6 +194,18 @@ En saanut rauhaa asian suhteen, joten oli pakko yrittää vielä kerran ratkaist
 
 ![konsole8](https://github.com/JanaHalt/InfraAsCode/assets/78509164/1ab3d382-ff1a-4201-b341-234870537b33)   
 
+Kansiossa ```/srv/salt/colortheme``` on nyt kolme tiedostoa:  
+***init.sls***  
+***Solarised.profile***  
+***setdefault***  
+
+**setdefault** tiedoston sisältö on seuraavanlainen:  
+
+```  
+[Desktop Entry]  
+DefaultProfile=Solarised.profile  
+```  
+
 Ja tässä näkyy, että myös orja-koneella on vaihtunut oletusväriteema:  
 
 ![konsole9](https://github.com/JanaHalt/InfraAsCode/assets/78509164/6ce77deb-4447-4dff-9378-643d28107594)  
